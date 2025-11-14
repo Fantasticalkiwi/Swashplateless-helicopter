@@ -15,13 +15,15 @@
 //  Uncomment the line according to your sensor type
 //AS5600L as5600;   //  use default Wire
  AS5600 as5600;   //  use default Wire
-const float pi = 3.14159265
+const float pi = 3.14159265;
 
 const float throttleIN = 0;
 const float pitchCTRL  = 1;
 const float rollCTRL   = 2;
 const float yawCTRL    = 3;
 
+long lastRev = 0;
+unsigned long lastT = 0;
 
 void setup()
 {
@@ -46,31 +48,49 @@ void setup()
 
 void loop()
 {
-  //  Serial.print(millis());
-  //  Serial.print("\t");
-  Serial.print(as5600.readAngle());
-  double MotorRads = (as5600.readAngle())*pi/180
-  Serial.print("\t");
-  Serial.println(as5600.rawAngle());
-  
+  // Read full angle to force revolution update
+  float angle = as5600.readAngle();   // MUST call this for rev counter to work
 
-  //// Calculate Output ////
-  if (throttleIN > 20){
-    Duty = throttleIN + (pitchCTRL*cos(MotorRads)) + (rollCTRL * sin(MotorRads));
-  }
-  else{
-    Duty = 0;
-  }
-  if (throttleIN > 1000){
-    Duty = 0;
-  }
-  
-  //// Output ////
-  throttleMAP = map(Duty,0,1000,4048,8096);
-  throttleOUT = constrain(throttleMAP, 4048, 8096);
+  long rev = as5600.getRevolutions();
+  unsigned long t = millis();
+  float dt = (t - lastT) / 1000.0;
 
-  analogWrite(4, throttleOUT);
+  float dRev = rev - lastRev;
+
+  float rpm = dRev * (60.0 / dt);
+
+  Serial.print("Angle: ");
+  Serial.println(angle);
+
+  Serial.print("Revolutions: ");
+  Serial.println(rev);
+
+  Serial.print("RPM: ");
+  Serial.println(rpm);
+
+  lastRev = rev;
+  lastT = t;
+
+  delay(20);   // recommended sample rate (50 Hz)
 }
+  //// Calculate Output ////
+ //
+//   if (throttleIN > 20){
+//     Duty = throttleIN + (pitchCTRL*cos(MotorRads)) + (rollCTRL * sin(MotorRads));
+//   }
+//   else{
+//     Duty = 0;
+//   }
+//   if (throttleIN > 1000){
+//     Duty = 0;
+//   }
+  
+//   //// Output ////
+//   throttleMAP = map(Duty,0,1000,4048,8096);
+//   throttleOUT = constrain(throttleMAP, 4048, 8096);
+
+//   analogWrite(4, throttleOUT);
+
 
 
 //  -- END OF FILE --
