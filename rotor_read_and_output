@@ -1,13 +1,5 @@
-//
-//    FILE: AS5600_demo.ino
-//  AUTHOR: Rob Tillaart
-// PURPOSE: demo
-//     URL: https://github.com/RobTillaart/AS5600
-//
-//  Examples may use AS5600 or AS5600L devices.
-//  Check if your sensor matches the one used in the example.
-//  Optionally adjust the code.
-
+//Code reads encoder position and then computes throttle output based on throttle, pitch, and roll inputs. 
+// Currently those inputs are entered through the serial monitor.
 
 #include "AS5600.h"
 
@@ -17,13 +9,13 @@
  AS5600 as5600;   //  use default Wire
 const float pi = 3.14159265;
 
-const float throttleIN = 0;
-const float pitchCTRL  = 1;
-const float rollCTRL   = 2;
-const float yawCTRL    = 3;
-
-long lastRev = 0;
-unsigned long lastT = 0;
+float throttleIN = 0;
+float pitchCTRL  = 0;
+float rollCTRL   = 0;
+float yawCTRL    = 0;
+float Duty = 0;
+float throttleOUT = 0;
+float throttleMAP = 0;
 
 void setup()
 {
@@ -48,48 +40,47 @@ void setup()
 
 void loop()
 {
-  // Read full angle to force revolution update
-  float angle = as5600.readAngle();   // MUST call this for rev counter to work
-
-  long rev = as5600.getRevolutions();
-  unsigned long t = millis();
-  float dt = (t - lastT) / 1000.0;
-
-  float dRev = rev - lastRev;
-
-  float rpm = dRev * (60.0 / dt);
-
-  Serial.print("Angle: ");
-  Serial.println(angle);
-
-  Serial.print("Revolutions: ");
-  Serial.println(rev);
-
-  Serial.print("RPM: ");
-  Serial.println(rpm);
-
-  lastRev = rev;
-  lastT = t;
-
-  delay(20);   // recommended sample rate (50 Hz)
-}
-  //// Calculate Output ////
- //
-//   if (throttleIN > 20){
-//     Duty = throttleIN + (pitchCTRL*cos(MotorRads)) + (rollCTRL * sin(MotorRads));
-//   }
-//   else{
-//     Duty = 0;
-//   }
-//   if (throttleIN > 1000){
-//     Duty = 0;
-//   }
   
-//   //// Output ////
-//   throttleMAP = map(Duty,0,1000,4048,8096);
-//   throttleOUT = constrain(throttleMAP, 4048, 8096);
+  float MotorRads = as5600.rawAngle() * AS5600_RAW_TO_RADIANS;
+  Serial.print("Rads = ");
+  Serial.print(MotorRads);
+  Serial.print("\tω = ");
+  Serial.print(as5600.getAngularSpeed(AS5600_MODE_RPM));
+  
+//// Calculate Output ////
+//
+  if (Serial.available()>0){
+    String var = Serial.readString();
+    int i = var.indexOf(' ');
+    String text = var.substring(0, i);
+    int val = var.substring(i).toInt();
 
-//   analogWrite(4, throttleOUT);
+    if(text.equals("t")){
+      throttleIN = val;
+    }else if(text.equals("p")){
+      pitchCTRL = val;
+    }else if(text.equals("r")){
+      rollCTRL = val;
+    }
+
+  }
+  if (throttleIN > 20){
+    Duty = throttleIN + (pitchCTRL*cos(MotorRads)) + (rollCTRL * sin(MotorRads));
+  }
+  else{
+    Duty = 0;
+  }
+  if (throttleIN > 1000){
+    Duty = 0;
+  }
+  
+  //// Output ////
+  throttleMAP = map(Duty,0,1000,4048,8096);
+  throttleOUT = constrain(throttleMAP, 4048, 8096);
+  Serial.print("\tThrottle Out= ");
+  Serial.println(throttleOUT );
+  analogWrite(4, throttleOUT);
+}
 
 
 
