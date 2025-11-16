@@ -105,6 +105,9 @@ void loop()
         ARMED = false;
         Serial.println("DISARMED");
         motor01.sendThrottle(0);
+        while(Serial.available()==0){
+          
+        }
         }
     
 
@@ -142,8 +145,8 @@ void loop()
   
   throttleOUT = constrain(Duty, 0, 100);
   Serial.print("\tThrottle Out= ");
-Serial.println(throttleOUT );
-motor01.sendThrottlePercent(throttleOUT);
+  Serial.println(throttleOUT );
+  motor01.sendThrottlePercent(throttleOUT);
 }
 
 
