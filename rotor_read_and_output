@@ -9,11 +9,11 @@
  AS5600 as5600;   //  use default Wire
 const float pi = 3.14159265;
 
-float throttleIN = 0;
-float pitchCTRL  = 0;
-float rollCTRL   = 0;
-float yawCTRL    = 0;
-float Duty = 0;
+float throttleIN  = 0;
+float pitchCTRL   = 0;
+float rollCTRL    = 0;
+float yawCTRL     = 0;
+float Duty        = 0;
 float throttleOUT = 0;
 float throttleMAP = 0;
 
@@ -64,19 +64,19 @@ void loop()
     }
 
   }
-  if (throttleIN > 20){
+  if (throttleIN > 1){
     Duty = throttleIN + (pitchCTRL*cos(MotorRads)) + (rollCTRL * sin(MotorRads));
   }
   else{
     Duty = 0;
   }
-  if (throttleIN > 1000){
+  if (throttleIN > 100){
     Duty = 0;
   }
   
   //// Output ////
-  throttleMAP = map(Duty,0,1000,4048,8096);
-  throttleOUT = constrain(throttleMAP, 4048, 8096);
+  throttleMAP = map(Duty,0,100,0,100);
+  throttleOUT = constrain(throttleMAP, 0, 100);
   Serial.print("\tThrottle Out= ");
   Serial.println(throttleOUT );
   analogWrite(4, throttleOUT);
