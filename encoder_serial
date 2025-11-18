@@ -17,19 +17,21 @@ static constexpr auto IS_BIDIRECTIONAL = false;
 
 // Motor magnet count for RPM calculation
 static constexpr auto MOTOR01_MAGNET_COUNT = 24;
-float throttle_percent = 0;
+float throttle_percent = 10;
 
 //  Uncomment the line according to your sensor type
 //AS5600L as5600;   //  use default Wire
  AS5600 as5600;   //  use default Wire
 
 float throttleIN  = 0;
-float pitchCTRL   = 0;
+float pitchCTRL   = 10;
 float rollCTRL    = 0;
 float yawCTRL     = 0;
 float Duty        = 0;
 float throttleOUT = 0;
 float throttleMAP = 0;
+
+int t; 
 
 bool ARMED = false;
 
@@ -149,7 +151,7 @@ void loop()
     // Serial.print("\tRads = ");
     // Serial.print(MotorRads);
     // Serial.print("\tω = ");
-    // Serial.print(as5600.getAngularSpeed(AS5600_MODE_RPM));
+    //Serial.print(as5600.getAngularSpeed(AS5600_MODE_RPM));
     Duty = throttleIN + (pitchCTRL*cos(MotorRads)) + (rollCTRL * sin(MotorRads));
   }
   else{
@@ -171,10 +173,15 @@ void loop()
   unsigned long tNow = millis();
   float rawA = as5600.rawAngle();
   float radA = rawA * AS5600_RAW_TO_RADIANS;
-
-  // Serial.println(tNow);
-  // Serial.println(rawA);
+  //float rpm = as5600.getAngularSpeed(AS5600_MODE_RPM, true);
+  //Serial.println(rpm);
+  t = millis();
+  
+  Serial.println(t);
   Serial.println(radA);
+
+  //Serial.println(rawA);
+ // Serial.println(radA);
   // Serial.println(throttleIN);
   // Serial.println(pitchCTRL);
   // Serial.println(rollCTRL);
