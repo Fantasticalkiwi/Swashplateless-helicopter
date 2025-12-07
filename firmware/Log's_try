@@ -1,4 +1,4 @@
-//Code reads encoder position and then computes throttle output based on throttle, pitch, and roll inputs. 
+//Code reads encoder position and then computes throttle output based on throttle, pitch, and roll inputs.
 // Currently those inputs are entered through the serial monitor.
 
 #include "AS5600.h"
@@ -21,13 +21,13 @@ float throttle_percent = 0;
 
 //  Uncomment the line according to your sensor type
 //AS5600L as5600;   //  use default Wire
- AS5600 as5600;   //  use default Wire
+AS5600 as5600;  //  use default Wire
 
-float throttleIN  = 0;
-float pitchCTRL   = 0;
-float rollCTRL    = 0;
-float yawCTRL     = 0;
-float Duty        = 0;
+float throttleIN = 0;
+float pitchCTRL = 0;
+float rollCTRL = 0;
+float yawCTRL = 0;
+float Duty = 0;
 float throttleOUT = 0;
 float throttleMAP = 0;
 
@@ -37,7 +37,7 @@ const int pin2 = 26;
 const int pin3 = 27;
 const int pin4 = 14;
 
-const int threshold = 1200; 
+const int threshold = 1100;
 
 volatile uint32_t rise1 = 0, pulse1 = 0;
 volatile uint32_t rise2 = 0, pulse2 = 0;
@@ -82,8 +82,7 @@ bool ARMED = false;
 DShotRMT motor01(MOTOR01_PIN, DSHOT_MODE, IS_BIDIRECTIONAL, MOTOR01_MAGNET_COUNT);
 
 
-void setup()
-{
+void setup() {
   //PWM setup
   Serial.begin(115200);
 
@@ -112,69 +111,105 @@ void setup()
 
   Wire.begin();
 
-  as5600.begin();  //  set direction pin.
+  as5600.begin();                          //  set direction pin.
   as5600.setDirection(AS5600_CLOCK_WISE);  //  default, just be explicit.
 
   int b = as5600.isConnected();
   Serial.print("Connect: ");
   Serial.println(b);
   delay(1000);
-
 }
 
-void loop()
-{
+void loop() {
   float MotorRads = as5600.rawAngle() * AS5600_RAW_TO_RADIANS;
-  
+
   // Read Flight Controller Inputs
-  uint32_t ThrottleIN = pulse1;
-  uint32_t pitchCTRL = pulse3;
-  uint32_t rollCTRL = pulse2;
-  uint32_t yawCTRL = pulse4;
-  
-   if (ThrottleIN < threshold && pitchCTRL < threshold && rollCTRL < threshold) {
-  
+  int32_t ThrottleIN = pulse1;
+  int32_t pitchCTRL = pulse3;
+  int32_t rollCTRL = pulse2;
+  int32_t yawCTRL = pulse4;
+
+  if (Serial.available()>0)
+  {
+    String var = Serial.readStringUntil('\n');
+    int i = var.indexOf(' ');
+    String text = var.substring(0, i);
+    int val = var.substring(i).toInt();
+    if(text.equals("t")){
+      throttleIN = val;
+    }else if(text.equals("p")){
+      pitchCTRL = val;
+    }else if(text.equals("r")){
+      rollCTRL = val;
+    }
+    else if(text.equals("arm")){
+        Serial.println("ARMING…");
+        for (int i = 0; i < 2000; i++) {
+            motor01.sendThrottle(0);
+            delay(1);
+        
+        ARMED = true;
+        Serial.println("ARMED!");
+        }
+      }
+    else if (text.equals("disarm")) {
+        ARMED = false;
+        Serial.println("DISARMED");
+        motor01.sendThrottle(0);
+        while(Serial.available()==0){
+          
+        }
+        }
+  }
+  if (ThrottleIN < threshold && pitchCTRL < threshold && rollCTRL < threshold) {
+
     Serial.println("Arming ESC…");
-    for (int i = 0; i < 2000; i++) {   // ~2 seconds of zero throttle
+    for (int i = 0; i < 2000; i++) {  // ~2 seconds of zero throttle
       motor01.sendThrottle(0);
       delay(1);
-}
+    }
 
     ARMED = true;
     Serial.println("ESC ARMED.");
-    } 
-  
+  }
+
   // Serial.println(ThrottleIN);
   // Serial.println(pitchCTRL);
   // Serial.println(rollCTRL);
   // Serial.println(yawCTRL);
 
-    
 
-    
-  
 
-  
+
+
+
+
   //// Calculate Output ////
-  if (ARMED == true){
+  if (ARMED == true) {
     // Serial.print("\tRads = ");
     // Serial.print(MotorRads);
     // Serial.print("\tω = ");
     // Serial.print(as5600.getAngularSpeed(AS5600_MODE_RPM));
-    Duty = (ThrottleIN - 1000) + ((pitchCTRL-1500)*cos(MotorRads)) + ((rollCTRL-1500) * sin(MotorRads));
-    Serial.print(Duty);
-  }
-  else{
+    Duty = (2 * (ThrottleIN - 1000)) + ((pitchCTRL - 1500) * cos(MotorRads)) + ((rollCTRL - 1500) * sin(MotorRads));
+    // Serial.println(Duty);
+  } else {
     Duty = 0;
   }
-  
-  
+
+
   //// Output ////
-  
-  
-  throttleOUT = constrain(Duty, 48, 2048);
+
+
+  throttleOUT = constrain(Duty, 49, 2048);
   Serial.print("\tThrottle Out= ");
-  Serial.println(throttleOUT );
+  Serial.println(throttleOUT);
+  // Serial.print("ThrottleIN "); Serial.print(ThrottleIN);
+  // Serial.print("   pitchCTRL: "); Serial.print(pitchCTRL);
+  // Serial.print("   rollCTRL: "); Serial.println(rollCTRL);
+  // Serial.println(MotorRads);
+
+
+
   motor01.sendThrottle(throttleOUT);
 }
 
