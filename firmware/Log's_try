@@ -191,7 +191,7 @@ void loop() {
     // Serial.print("\tω = ");
     // Serial.print(as5600.getAngularSpeed(AS5600_MODE_RPM));
     Duty = (2 * (ThrottleIN - 1000)) + ((pitchCTRL - 1500) * cos(MotorRads)) + ((rollCTRL - 1500) * sin(MotorRads));
-    // Serial.println(Duty);
+    Serial.println(Duty);
   } else {
     Duty = 0;
   }
@@ -201,13 +201,11 @@ void loop() {
 
 
   throttleOUT = constrain(Duty, 49, 2048);
-  Serial.print("\tThrottle Out= ");
-  Serial.println(throttleOUT);
+  // Serial.print("\tThrottle Out= ");
+  // Serial.println(throttleOUT);
   // Serial.print("ThrottleIN "); Serial.print(ThrottleIN);
   // Serial.print("   pitchCTRL: "); Serial.print(pitchCTRL);
   // Serial.print("   rollCTRL: "); Serial.println(rollCTRL);
-  // Serial.println(MotorRads);
-
 
 
   motor01.sendThrottle(throttleOUT);
