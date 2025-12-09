@@ -190,7 +190,7 @@ void loop() {
     // Serial.print(MotorRads);
     // Serial.print("\tω = ");
     // Serial.print(as5600.getAngularSpeed(AS5600_MODE_RPM));
-    Duty = (2 * (ThrottleIN - 1000)) + ((pitchCTRL - 1500) * cos(MotorRads)) + ((rollCTRL - 1500) * sin(MotorRads));
+    Duty = (2 * (ThrottleIN - 1000)) + ((pitchCTRL - 1500) * sin(MotorRads)) + ((rollCTRL - 1500) * -cos(MotorRads));
     Serial.println(Duty);
   } else {
     Duty = 0;
