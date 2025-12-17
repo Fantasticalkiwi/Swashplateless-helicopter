@@ -87,9 +87,13 @@ bool ARMED = false;
 DShotRMT motor01(MOTOR01_PIN, DSHOT_MODE, IS_BIDIRECTIONAL, MOTOR01_MAGNET_COUNT);
 DShotRMT motor02(MOTOR02_PIN, DSHOT_MODE, IS_BIDIRECTIONAL, MOTOR02_MAGNET_COUNT);
 
+unsigned long previous_millis = 0;
+unsigned long current_millis = 0;
+unsigned long loop_time_ms = 0;
+
 void setup() {
   //PWM setup
-  Serial.begin(115200);
+
 
   pinMode(pin1, INPUT);
   pinMode(pin2, INPUT);
@@ -103,19 +107,13 @@ void setup() {
 
 
   // Starts the USB Serial Port
-  USB_SERIAL.begin(USB_SERIAL_BAUD);
 
   // Initialize DShot Signal for both motors
   motor01.begin();
   motor02.begin();
 
   // Initialize encoder
-  Serial.begin(115200);
-  Serial.println();
-  Serial.println(__FILE__);
-  Serial.print("AS5600_LIB_VERSION: ");
-  Serial.println(AS5600_LIB_VERSION);
-  Serial.println();
+
 
   Wire.begin();
 
@@ -123,12 +121,11 @@ void setup() {
   as5600.setDirection(AS5600_CLOCK_WISE);  //  default, just be explicit.
 
   int b = as5600.isConnected();
-  Serial.print("Connect: ");
-  Serial.println(b);
   delay(1000);
 }
 
 void loop() {
+
   float MotorRads = as5600.rawAngle() * AS5600_RAW_TO_RADIANS;
 
   // Read Flight Controller Inputs
@@ -202,11 +199,10 @@ void loop() {
     // Serial.print("\tRads = ");
     // Serial.println(MotorRads);
     // Serial.print("\tω = ");
-    Duty = (2 * (ThrottleIN - 600)) + 3 * ((pitchCTRL - 1500) * sin(MotorRads)) + 3 * ((rollCTRL - 1500) * -cos(MotorRads));
+    Duty = (2 * (ThrottleIN - 600)) + 1 * ((pitchCTRL - 1500) * sin(MotorRads)) + 1 * ((rollCTRL - 1500) * -cos(MotorRads));
     yaw_Duty = (yawCTRL - 1290);
 
-    Serial.print("\duty = ");
-    Serial.println(Duty);
+  
 
     throttleOUT = constrain(Duty, 49, 2048);
     yawOUT = constrain(yaw_Duty, 60, 2048);
