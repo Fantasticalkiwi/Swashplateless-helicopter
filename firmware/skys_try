@@ -41,8 +41,8 @@ const int pin2 = 26;
 const int pin3 = 27;
 const int pin4 = 14;
 
-const int threshold = 1250;
-const int thrrottle_threshhold = 1070;
+const int threshold = 1750;
+const int throttle_threshhold = 1070;
 
 volatile uint32_t rise1 = 0, pulse1 = 0;
 volatile uint32_t rise2 = 0, pulse2 = 0;
@@ -137,104 +137,88 @@ void loop() {
   int32_t rollCTRL = pulse4;
   int32_t yawCTRL = pulse2;
 
-  if (Serial.available() > 0) {
-    String var = Serial.readStringUntil('\n');
-    int i = var.indexOf(' ');
-    String text = var.substring(0, i);
-    int val = var.substring(i).toInt();
-    if (text.equals("t")) {
-      throttleIN = val;
-    } else if (text.equals("p")) {
-      pitchCTRL = val;
-    } else if (text.equals("r")) {
-      rollCTRL = val;
-    } else if (text.equals("arm")) {
-      Serial.println("ARMING…");
-      for (int i = 0; i < 2000; i++) {
-        motor01.sendThrottle(0);
-        motor02.sendThrottle(0);
-        delay(1);
+  // if (Serial.available() > 0) {
+  //   String var = Serial.readStringUntil('\n');
+  //   int i = var.indexOf(' ');
+  //   String text = var.substring(0, i);
+  //   int val = var.substring(i).toInt();
+  //   if (text.equals("t")) {
+  //     throttleIN = val;
+  //   } else if (text.equals("p")) {
+  //     pitchCTRL = val;
+  //   } else if (text.equals("r")) {
+  //     rollCTRL = val;
+  //   } else if (text.equals("arm")) {
+  //     Serial.println("ARMING…");
+  //     for (int i = 0; i < 2000; i++) {
+  //       motor01.sendThrottle(0);
+  //       motor02.sendThrottle(0);
+  //       delay(1);
 
-        ARMED = true;
-        Serial.println("ARMED!");
-      }
-    } 
+  //       ARMED = true;
+  //       Serial.println("ARMED!");
+  //     }
+  //   } 
 
-    else if (text.equals("disarm")) {
-      ARMED = false;
-      Serial.println("DISARMED");
-      motor01.sendThrottle(0);
-      // // while (Serial.available() == 0) {
-      // }
-    }
-  }
+  //   else if (text.equals("disarm")) {
+  //     ARMED = false;
+  //     Serial.println("DISARMED");
+  //     motor01.sendThrottle(0);
+  //     // // while (Serial.available() == 0) {
+  //     // }
+  //   }
+  // }
 
-  if (ThrottleIN < threshold && ThrottleIN > thrrottle_threshhold && pitchCTRL < threshold && rollCTRL < threshold && yawCTRL < threshold && ARMED == false){
+  if (ThrottleIN < 1250 && ThrottleIN > throttle_threshhold && pitchCTRL > threshold && rollCTRL > threshold && yawCTRL < 1250 && ARMED == false){
         Serial.println("ARMING…");
+        ARMED = true;
         for (int i = 0; i < 2000; i++) {
           motor01.sendThrottle(0);
           motor02.sendThrottle(0);
           delay(1);
-          ARMED = true;
-          Serial.println("ARMED!");
+          
         }
-        delay(500);
+        Serial.println("ARMED!");
+        //delay(1000);
     }
-  else if (ThrottleIN < threshold && pitchCTRL < threshold && rollCTRL < threshold && yawCTRL < threshold && ARMED == true){
+  else if (ThrottleIN < 1250 && pitchCTRL > threshold && rollCTRL > threshold && yawCTRL < 1250 && ARMED == true){
+      motor01.sendThrottle(47);
+      motor02.sendThrottle(47);
       ARMED = false;
       Serial.println("DISARMED");
-      motor01.sendThrottle(0);
-      motor02.sendThrottle(0);
       delay(500);
     }
-  else if (ThrottleIN < thrrottle_threshhold){
-      ARMED = false;
-      Serial.println("DISARMED");
-      motor01.sendThrottle(0);
-      motor02.sendThrottle(0);
-      delay(500);
-    }
+  // else if (ThrottleIN < throttle_threshhold){
+  //     motor01.sendThrottle(47);
+  //     motor02.sendThrottle(47);
+  //     ARMED = false;
+  //     Serial.println("DISARMED");
+  //     delay(500);
+    // }
   
-  // if (ThrottleIN < threshold && pitchCTRL < threshold && rollCTRL < threshold) {
-  //   Serial.println("Arming ESC…");
-  //   for (int i = 0; i < 2000; i++) {  // ~2 seconds of zero throttle
-  //     motor01.sendThrottle(0);
-  //     delay(1);
-  //   }
-  //   ARMED = true;
-  //   Serial.println("ESC ARMED.");
-  // }
-
-  // Serial.print(ThrottleIN);
-  // Serial.print(pitchCTRL);
-  // Serial.print(rollCTRL);
-  // Serial.println(yawCTRL);
-
-
-
-
-
-
 
   //// Calculate Output ////
-  if (ARMED == true && ThrottleIN > thrrottle_threshhold) {
+  if (ARMED == true && ThrottleIN > throttle_threshhold) {
     // Serial.print("\tRads = ");
     // Serial.println(MotorRads);
     // Serial.print("\tω = ");
-    Duty = (2 * (ThrottleIN - 1200)) + ((pitchCTRL - 1500) * sin(MotorRads)) + ((rollCTRL - 1500) * -cos(MotorRads));
-    yaw_Duty = (yawCTRL - 1300);
+    Duty = (2 * (ThrottleIN - 600)) + 3 * ((pitchCTRL - 1500) * sin(MotorRads)) + 3 * ((rollCTRL - 1500) * -cos(MotorRads));
+    yaw_Duty = (yawCTRL - 1290);
+
+    Serial.print("\duty = ");
+    Serial.println(Duty);
 
     throttleOUT = constrain(Duty, 49, 2048);
-    yawOUT = constrain(yaw_Duty, 49, 2048);
+    yawOUT = constrain(yaw_Duty, 60, 2048);
 
     motor01.sendThrottle(throttleOUT);
     motor02.sendThrottle(yawOUT);
   
 
-    Serial.print("   throttleOUT: ");
-    Serial.print(throttleOUT);
-    Serial.print("   yawOUT: ");
-    Serial.println(yawOUT);
+    // Serial.print("   throttleOUT: ");
+    // Serial.print(throttleOUT);
+    // Serial.print("   yawOUT: ");
+    // Serial.println(yawOUT);
   
   } 
 
@@ -243,14 +227,12 @@ void loop() {
 
 
   
+  // Serial.print("ThrottleIN "); Serial.print(ThrottleIN);
+  // Serial.print("   pitchCTRL: "); Serial.print(pitchCTRL);
+  // Serial.print("   rollCTRL: "); Serial.print(rollCTRL);
+  // Serial.print("   yawCTRL: "); Serial.println(yawCTRL);
 
-  // Serial.print("ThrottleIN ");
-  // Serial.print(ThrottleIN);
-  // Serial.print("   pitchCTRL: ");
-  // Serial.print(pitchCTRL);
-  // Serial.print("   rollCTRL: ");
-  // Serial.print(yawCTRL);
-  // Serial.println("   yawCTRL: ");
+
 }
 
 
