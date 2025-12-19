@@ -60,23 +60,25 @@
 
   <main>
 
-
     <!-- INTRO -->
     <div class="py-vh-4">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10 text-center">
 
-            <p class="lead fs-5 lh-lg" data-aos="fade">
-              <h3 class = "text-center mb-3"> <b>Phase 2</b> </h3>
+            <h3 class="text-center mb-3" data-aos="fade"><b>Phase 2</b></h3>
 
-              <h5 class = "text-center mb-3"> <br><b>Phase 2 Overview & Main Goals</b><br> </h5>
-             This phase was focused on refinement of the progress started in the previous phase. 
+            <h5 class="text-center mb-3" data-aos="fade"><br><b>Phase 2 Overview & Main Goals</b><br></h5>
+
+            <p class="lead fs-5 lh-lg" data-aos="fade">
+              This phase was focused on refinement of the progress started in the previous phase.
               Our main goals for this phase were: <br>
               1. Refine our rotor system <br>
               2. Add a second axis to our testing rig for pitch control<br>
               3. Write an initial version of the controls algorithm for our rotor system <br>
               4. Begin testing the rotor system on our rig <br>
+            </p>
+
           </div>
         </div>
       </div>
@@ -139,7 +141,17 @@ so that it would fit on this tubing. After initially attempting to
   create friction to keep the mount securely on the broader cage. <br>
 
 <br>[pic11 - vid of completed testing rig]<br>
+              </p>
 
+              <!-- Insert pic11vid.mp4 -->
+              <div class="my-4 text-center">
+                <video class="img-fluid rounded shadow" controls>
+                  <source src="img/pic11vid.mp4" type="video/mp4">
+                </video>
+                <p class="text-muted mt-2"><small>pic11vid.mp4</small></p>
+              </div>
+
+              <p class="fs-5 lh-lg">
 <br>Once we had figured out this lower mount, we decided to continue
 improving the testing rig by adding a second axis of rotation.
 Our primary requirement for this second axis was that it could be
@@ -154,7 +166,7 @@ in place, making the two-axis rig into a one-axis rig. <br>
             </div>
 
             <!--MOTOR/PROPELLER/ELECTRONICS  MOUNT -->
-            <div class = "border-top py-vh-4" data-aos="fade-up">
+            <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="text-center mb-3">Mechanical - Motor, Propeller, and Electronics Mount</h3>
               <p class="fs-5 lh-lg">
 <br>While undergoing our testing rig redesign, we also had to create 
@@ -169,6 +181,15 @@ a means of attaching the motor and rotor system to the testing rig.
  initial brainstorming on attaching all of them to the helicopter<br>
 
 <br>[pic13 - with esp32 mount]<br>
+              </p>
+
+              <!-- Insert pic13.jpeg -->
+              <div class="my-4 text-center">
+                <img src="img/pic13.jpeg" class="img-fluid rounded shadow" alt="pic13 - with esp32 mount">
+                <p class="text-muted mt-2"><small>pic13.jpeg</small></p>
+              </div>
+
+              <p class="fs-5 lh-lg">
 We found the CAD for all our electronics, decided on hole patterns,
 and printed out initial versions. After creating these initial 
 patterns, we realized that the same hole pattern could be very 
@@ -179,15 +200,35 @@ It worked perfectly. <br>
 the helicopter, as a main plate where we would mount the flight
 controller, ESP32, and motor/rotor system. We went through 
 several additional iterations of this system. <br>
-</p>
-              <!--CONTROLS ALGORITHM:-->
-              <div class = "border-top py-vh-4" data-aos="fade-up">
+              </p>
+            </div>
+
+            <!--CONTROLS ALGORITHM:-->
+            <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="text-center mb-3">Software - Controls Algorithm</h3>
               <p class="fs-5 lh-lg">
  
 <br>We continued developing our firmware and communications protocols. 
 <br>[insert pic of the flowchart from sprint 2]<br>
+              </p>
 
+              <!-- Insert flowchart diagrams you DO have -->
+              <div class="my-4 text-center">
+                <img src="img/Energy%2Fsignal%20flow%20diagram.png" class="img-fluid rounded shadow" alt="Energy/signal flow diagram">
+                <p class="text-muted mt-2"><small>Energy/signal flow diagram.png</small></p>
+              </div>
+
+              <div class="my-4 text-center">
+                <img src="img/Software%20diagram.png" class="img-fluid rounded shadow" alt="Software diagram">
+                <p class="text-muted mt-2"><small>Software diagram.png</small></p>
+              </div>
+
+              <div class="my-4 text-center">
+                <img src="img/Circuit%20diagram.png" class="img-fluid rounded shadow" alt="Circuit diagram">
+                <p class="text-muted mt-2"><small>Circuit diagram.png</small></p>
+              </div>
+
+              <p class="fs-5 lh-lg">
 <br>At this stage, the swashplateless rotor system is running off
  of serial command from the user on a computer that is physically
   connected to the ESP32. The ESP32 is reading the encoder with 
@@ -197,9 +238,10 @@ several additional iterations of this system. <br>
     The ESP32 is constantly running this loop and writing to the ESC
      based on Throttle, Pitch, and Roll commands from the user.<br>
               </p>
+            </div>
 
-              <!--TESTING OUR SWASHPLATELESS SYSTEM -->
-              <div class = "border-top py-vh-4" data-aos="fade-up">
+            <!--TESTING OUR SWASHPLATELESS SYSTEM -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="text-center mb-3">Integration - Initial Testing On Our Shawshplateless System </h3>
               <p class="fs-5 lh-lg">
                 
@@ -211,8 +253,17 @@ we got it to work!<br>
 <br>[insert video of demo here]<br>
                </p>
 
-              <!--HELICOPTER FRAME INTEGRATED DESIGN -->
-              <div class = "border-top py-vh-4" data-aos="fade-up">
+              <!-- Optional: you have pic4vid.mp4 available -->
+              <div class="my-4 text-center">
+                <video class="img-fluid rounded shadow" controls>
+                  <source src="img/pic4vid.mp4" type="video/mp4">
+                </video>
+                <p class="text-muted mt-2"><small>pic4vid.mp4</small></p>
+              </div>
+            </div>
+
+            <!--HELICOPTER FRAME INTEGRATED DESIGN -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="text-center mb-3">Mechanical - Helicopter Frame Initial Design</h3>
               <p class="fs-5 lh-lg">
 <br>When our more mechanically-minded team members weren’t working on
@@ -245,8 +296,12 @@ The main plate was mounted at the top, the landing struts were
  crossbars. <br>
 
               </p>
-            <br> <br> <p>
+            </div>
+
+            <!-- RECAP -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="text-center mb-3">Recap</h3>
+              <p class="fs-5 lh-lg">
 <br>[pic16 -  the timeline created for the sprint review]<br><br>
 We achieved a great deal in this phase! We created a mini-timeline
 for our minimum viable product (the two-axis control of thrust 
@@ -255,7 +310,32 @@ vector on the testing rig). We were doing well on that timeline,
  design, too. Onto the next phase!<br><br>
 
 [insert link to phase review slides]
-            </p>
+              </p>
+
+              <!-- Extra visuals you DO have (optional, but inserted) -->
+              <div class="my-4 text-center">
+                <img src="img/Pic1_cc.png" class="img-fluid rounded shadow" alt="Pic1_cc">
+                <p class="text-muted mt-2"><small>Pic1_cc.png</small></p>
+              </div>
+
+              <div class="my-4 text-center">
+                <img src="img/Pic2.png" class="img-fluid rounded shadow" alt="Pic2">
+                <p class="text-muted mt-2"><small>Pic2.png</small></p>
+              </div>
+
+              <div class="my-4 text-center">
+                <img src="img/Budget%20finalized.png" class="img-fluid rounded shadow" alt="Budget finalized">
+                <p class="text-muted mt-2"><small>Budget finalized.png</small></p>
+              </div>
+
+              <!-- Optional PDF embed -->
+              <div class="my-5">
+                <div class="text-center mb-3">
+                  <p class="text-muted"><small>Tail Motor Calculations.pdf</small></p>
+                </div>
+                <iframe src="img/Tail%20Motor%20Calculations.pdf" width="100%" height="600" style="border:0;" title="Tail Motor Calculations"></iframe>
+              </div>
+
             </div>
 
           </div>
