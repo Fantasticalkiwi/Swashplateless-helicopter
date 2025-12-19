@@ -117,21 +117,67 @@
   <div class="col-10 text-center py-vh-3">
 <p class="lead" data-aos="fade">
   
-  <p style="font-size: 36px;">General Project Overview -- PHASE 3</p>
+  <p style="font-size: 36px;">PHASE THREE/FOUR OVERVIEW</p>
   <p style="font-size: 18px;">
-  For our final Principles of Integrated Engineering class project, we decided to build a remote-controlled helicopter  that can change its pitch and roll output without the need of a swashplate. 
+    In this phase, we continued developing our work and achieved our MVP! We initially ran into a major roadblock when our testing rig broke, but overcame this challenge and went on to achieve two-axis control of our rotor system’s thrust vector. 
   <br><br> </p>
 
-  <p style="font-size: 24px;">WHAT IS A SWASHPLATE?</p>
+  <p style="font-size: 24px;">THE EXPLOSION</p>
   
   
   <p style="font-size: 18px;">
-  To understand the “why” behind the mechanics of swashplates, we first need to understand how a helicopter uses its main rotor to fly.<br><br>
+  Much of our work during this phase was precipitated by the explosion of our test rig.
+  <br>
+    [pic17vid: video of explosion here]
+    
+  <br>
 
-  The main rotor provides the vertical thrust needed to overcome gravity. The propeller's velocity controls the helicopter's rate of ascent or descent. Adjusting the pitch of its blades with reference to a neutral axis will adjust its net thrust vector, which will move the helicopter <b>forward, backward, or sideways</b>.
+  After this breakdown of our testing rig, we discussed possible reasons for the failure. Rewatching videos of the failure of the rig, we saw significant vibrations from the rotor system being transferred to the testing rig and causing significant deformation in our 3D printed attachment pieces. 
   <br><br>
-  When the thrust vector is angled forwards, the helicopter moves forwards. When it is angled back, the helicopter moves back. 
+  We knew that some vibration was inherent to a swashplateless system – the acceleration and deceleration of our rotor head was what made it work, in theory. However, we seemed to be experiencing far more vibration than made sense. 
   <br><br>
+  We realized that a lot of this vibration could be attributed to our rotor system. The center of gravity of our system was off-balance from our center of rotation, causing unnecessary vibration.
+  <br><br>
+  [pic18 - side-by-side comparison of old and new rotor systems]
+  <br><br>
+  After making this realization, we redesigned the rotor system so that it was perfectly symmetrical, meaning that its center of gravity would be better aligned with the center of rotation. 
+  <br><br>
+  In addition, our discussion of the inherent vibrations that come as part of a swashplateless rotor system helped us realize that we needed to strengthen our testing rig motor mount. We wanted force from the rotor system to be directly transferred to the testing rig so that we could more easily visualize the effects of our testing. For all of these reasons, we cut a new version of a similar, but strengthened, piece out of quarter-inch aluminum plate. 
+  <br><br>
+
+  <p style="font-size: 24px;">ACHIEVING TWO AXIS CONTROL</p>
+  <br><br>
+  </p>
+
+  <p style="font-size: 18px;">
+    Once we had redesigned our swashplate and strengthened our testing rig, we went back to testing.  We fully achieved two-axis control! This was our initial goal for the whole project, so it felt good to achieve. 
+    <br><br>
+    [pic19vid - insert video of two-axis control working!!!]
+    <br><br>
+    Achieving two-axis control required some work and tuning from the first stage. We had to balance the rotorhead and test stand to enable us to see if roll was changing. We dealt with a full system rapid unscheduled disassembly due to rotor imbalance. This required redesign and build of the test system.
+
+  </p>
+
+  <p style="font-size: 24px;">HELICOPTER MECHANICAL DEVELOPMENT</p>
+  <br><br>
+  </p>
+
+  <p style="font-size: 18px;">
+    Once we had solved our testing rig’s mechanical problems after the explosion, we began working on translating our helicopter from CAD into a real mechanical design. Our motivators in this stage were reducing part count and weight while maintaining strength. 
+    <br><br>
+    [pic20 - prev mount vs new mount]
+    <br><br>
+    With this motivation, we realized that we could integrate our main motor and electronics mount with the crossbars we were using to attach it to the side frame, reducing part count and complexity of assembly. 
+    <br><br>
+    At this point in the process, we also began manufacturing initial prototypes of our helicopter. We waterjetted our side frame pieces out of 16th inch aluminum plate. Initially, we intended to have significant lightweighting in our design. However, when we went to cut it, the shop staff requested that we not cut unnecessary holes, to avoid wasting grommet. For this reason, we removed all lightweighting. Even without it, the pieces still came out very light – 16th inch aluminum isn’t very heavy.
+    <br><br>
+    [pic21 & 22: DXF screenshot Sammy sent to Kai-Xing, then the actual thing]
+    <br><br>
+    Once we had printed our main plate and waterjetted our side plates, we began putting them together and figuring out sizing. We realized that we could reduce part count further and increase ease of assembly by using heat-set inserts rather than nuts for many connections of our main plate, so we remade the plate to accept headset inserts. 
+    <br><br>
+    We designed a mount for our tail tube out of 3D printed material, with the same basic considerations–we wanted it to be low-part-count, easy to assemble, and strong. We created a motor tail mount that was essentially a plug glued into the tail rod.
+
+
   </p>
 
   <!-- **** pic1 go here ****-->
@@ -139,112 +185,7 @@
     src="img/Pic1_cc (1).png"
     style= "width: 600px; height: auto; display: block; margin: 1rem auto;">
 
-  <p style="font-size: 18px;">
-  Normal helicopters control the direction of their thrust vectors with a swashplate, a mechanical system to alter the pitch of the rotors through the full rotation. This system is mechanically complex and requires at least one additional actuator.
   
-  <br> <br>
-
-  After seeing a Tom Stanton video in which he made a swashplateless helicopter, we were inspired to make our own.
-
-  <br><br></p>
-
-  <p style="font-size: 24px;">HOW A SWASHPLATE WORKS</p>
-
-  <!-- **** pic2 go here ****-->
-  <img
-    src="img/pic2v2.png"
-    style="width: 600px; height: auto; display: block; margin: 1rem auto;">
-
-  <p style="font-size: 18px;">
-  A swashplateless system changes the direction of its thrust vector through a control system which speeds up and down the rotor through its rotation. The inertia of the rotor causes it to swing forward or backwards. When mounted on an angled pivot, this swing can change the pitch angle of the rotor. 
-  
-  <br> <br>
-
-  This method reduces mechanical complexity; the complexity is transferred over to the controls for the rotor system. This reduction in complexity enables smaller helicopters, which is pretty cool to think about. 
-
-  <br><br></p>
-
-  <p style="font-size: 36px;">PROJECT GOALS AND RESULTS</p>
-
-
-  <p style="font-size: 18px;">
-  <b>Goal 1:</b> Build a swashplateless rotor system that can alter its thrust vector using a motor control algorithm and demonstrate 1-axis and 2-axis control in testing [CHECK!]
-  <br>
- <b>Goal 2</b> (STRETCH GOAL): Build a helicopter with a swashplateless system and tune control software to make swashplateless helicopter fly [CHECK!]
-
-  <p style="font-size: 24px;">RESULTS</p>
-  <p style="font-size: 18px;">
-  <b>Goal 1 Result:</b> We built a swashplateless system and demonstrated 1- and 2-axis control with a testing rig. 
-  </p>
-  <video
-    src="img/pic4vid (1).mp4"
-    style="width: 600px; height: auto; display: block; margin: 1rem auto;"
-    controls
-    autoplay
-    muted
-    loop>
-
-  </video>
-  <p style="font-size: 18px;">
-  <b>Goal 2 Result:</b> We built and flew a helicopter utilizing our swashplateless system.
-  <video
-    src="img/pic5vid.mp4"
-    style="width: 400px; height: auto; display: block; margin: 1rem auto;"
-    controls
-    autoplay
-    muted
-    loop>
-
-  <br><br>
-  
-  As shown in the images and videos, we achieved all of our project goals. Our progress was marked by distinct phases, each culminating in a phase review. To see our progression from ideation to final product, review the <b> phase pages </b> in the menu.  Additional information (budget, circuit schematic, etc.) is shown in the Miscellaneous section below. 
-
-  <br><br></p>
-  <br><br>
-  <p style="font-size: 36px;">MISCELLANEOUS INFORMATION</p>
-  
-  <p style="font-size: 24px;">General Series of Progression</p>
-  <img
-    src="img/Progression towards goals.png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
-
-  <p style="font-size: 24px;">Energy and Signal Flow Diagram</p>
-  <img
-    src="img/Energy_signal flow diagram (1).png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
-  
-  <br>
-  <p style="font-size: 24px;">Software Structure Diagram</p>
-  <img
-    src="img/Software diagram.png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
-    <figcaption style="text-align: center; margin-top: 0.5rem;">
-      NEEDS DESCRIPTION!!!!  Including per rubric "a detailed description of the software and firmware design swith links to complete source code (github or other repository is helpful). Please be sure to include a list of all external software dependencies (eg. OpenCV, a RaspPI OS, etc.)"
-    </figcaption>
-  <br>
-
-  <p style="font-size: 24px;">Circuit Schematic</p>
-  <img
-    src="img/Circuit diagram.png"
-    style="width: 500px; height: auto; display: block; margin: 1rem auto;">
-    <figcaption style="text-align: center; margin-top: 0.5rem;">
-      NEEDS DESCRIPTION!!!!  
-    </figcaption>
-
-  <p style="font-size: 24px;">Final helicopter CAD</p>
-  
-  <p style="font-size: 24px;">Final helicopter CAD</p>
-
-    
-  <br>
-  <p style="font-size: 24px;">Budget Spreadsheet</p>
-  <img
-    src="img/Budget finalized.png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
-    <figcaption style="text-align: center; margin-top: 0.5rem;">
-      Please note that "Unit cost" means total cost of the item (including shipping) if we had purchased it. Total cost is the actual amount each item cost us (many items were already available)
-    </figcaption>
-    
 
   </body>
 </html>
