@@ -70,7 +70,7 @@
             <h1 class="text-center fw-bold mb-3" data-aos="fade">Phase 1</h1>
 
             <!-- Smaller but still prominent + bold -->
-            <h3 class="text-center fw-bold mb-3" data-aos="fade">Introduction</h3>
+            <h3 class="text-center fw-bold mb-3" data-aos="fade"> <br> Introduction</h3>
 
             <p class="lead fs-5 lh-lg" data-aos="fade">
               Phase 1 was our initial ideation and testing portion.
@@ -79,7 +79,7 @@
               requirements definition, and test rig setup in this phase.
             </p>
 
-            <h3 class="text-center fw-bold mb-3" data-aos="fade">Goals for Sprint 1</h3>
+            <h3 class="text-center fw-bold mb-3" data-aos="fade"> <br> Goals for Sprint 1</h3>
 
             <p class="lead fs-5 lh-lg" data-aos="fade">
               1. Order the swashplateless system’s motors and electronics <br>
@@ -110,7 +110,7 @@
                 and the second pivot would allow us to see how it responded to pitch inputs.
                 Our goal was to have two-axis thrust vector control before mounting all of the components on the helicopter.
                 We started by designing and fabricating the single-axis testing stand. Once everything was mounted correctly,
-                we could analyze the net thrust vector for the roll inputs. Once we designed and implemented one-axis control,
+                we could analyze the net thrust vector for the roll inputs. After designing and implementing one-axis control,
                 we added a second pivot to our testing rig for pitch inputs. Once everything was integrated,
                 we could test how our rotor system responded to the pitch and roll inputs done by the controller,
                 and could begin advancing the design of the rotor system.
@@ -167,19 +167,25 @@
             <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="mb-3">Mechanical - Swashplateless Pivot System</h3>
               <p class="fs-5 lh-lg">
-                While designing our first version of our rotor system, we knew a few considerations we needed to keep in mind <br>
-                We needed a pivot which would allow the pitch angle to change with rapid changes in speed <br>
-                Needed to be able to be mounted on a motor <br>
-                Needed to be low-friction. <br>
-                Rotors need to be same radius from center <br><br>
+                While designing the first version of our rotor system, these were our initial design considerations: <br><br>
+                1. It needs a pivot that allows the pitch angle to change with rapid changes in speed <br>
+                2. It needs to be able to be mounted on a motor <br>
+                3. Low Friction is a must <br>
+                4. The rotors need to be the same radius from the center <br><br>
 
-                Based on these requirements, we created an initial prototype. This prototype consisted of a 3D printed hinge in single shear held together by an underconstrained dowel. This was just a proof of concept that this design was sufficient for blade actuation and was not yet integrated with the motor.
+                Based on these requirements, we created an initial prototype. 
+                This prototype consisted of a 3D printed hinge in single shear
+                 held together by an underconstrained dowel. 
+                 This was just a proof of concept that this design was 
+                 sufficient for blade actuation and was not yet integrated with the motor.
+                 <br><br> Here's a picture of our initial CAD prototype for the Pivot System
+                 [insert improvedhub]
               </p>
             </div>
 
             <!--ELECTRONICS, FIRMWARE, CONTROLS, MOTORS -->
             <div class="border-top py-vh-4" data-aos="fade-up">
-              <h3 class="mb-3">Electronics, Firmware, Controls, Motors</h3>
+              <h3 class="mb-3">Electronics, Firmware, Controls, and Motors</h3>
               <p class="fs-5 lh-lg">
                 We put Logan and Sky on the task of speccing out all components because 
                 the two of them had significant experience building flying things 
@@ -212,9 +218,26 @@
             <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="mb-3">Tail Rotor Calculations</h3>
               <p class="fs-5 lh-lg">
-                  We needed a tail rotor.. blah blah blah <br> 
-                   <br> [Summary of Calculation  results] <br>
-                  <br> insert tail calculation pictures <br>
+
+                
+
+                  Tail rotor systems are essential for helicopters, they provide a counteracting force
+                  to the aircraft's main propeller torque. Which prevents
+                  the helicopter from turning uncontrollably in the opposite direction of the main motor's rotation. 
+
+                  <br><br> In order to counteract the force generated by the main propeller,
+                   the tail propeller must be able to provide enough thrust. So we needed to know how powerful our tail motor needed to be.
+                   After building a physics model of the helicopter and analyzing the forces generated by the main rotor, 
+                   we reached the following tail motor requirements:<br><br>
+                   1. Our minimum target KV was at least 1300 RPM/V <br>
+                   2. The motor must be able to sustain 30V of continuos power and 5A of continuos current<br>
+                   3. The thrust force generated by the motor must be of at least 2 Newtowns <br>
+
+                   <br>Here's our derivation for the tail motor requirements:
+                  These were our initial design constraints and considerations for our tail and complementray components:
+                  1. The tail must be long enough to offset the tail motor in the right place
+                  2. The tail mounting must be capable of holding the tail and its components, and it must contraint he tail in all directions
+                  3. The tail motor mount has to be strong enough to resist crash impacts, and it has to be able to be dismounted easily
               </p>
 
               <!-- PDF embed (your exact filename) -->
