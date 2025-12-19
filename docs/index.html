@@ -250,7 +250,17 @@
     src="img/Circuit diagram.png"
     style="width: 500px; height: auto; display: block; margin: 1rem auto;">
     <figcaption style="text-align: center; margin-top: 0.5rem;">
-      NEEDS DESCRIPTION!!!!  
+      The circuit diagram follows the general order of data flow through the system. 
+      <br>
+      <br>
+      The receiver is a small board responsible for communicating between the radio controller and the aircraft. It communicates with the radio bidirectionally at 900MHz over a protocol called crossfire. It has 4 connections to the flight controller that power it and enable connection over UART. 
+      <br>
+      <br>
+      The Flight Controller is powered at 16.8V by the ground and VCC pin on the ESC. The board also shares common ground with the ESP32 in order to enable the sending 340hz PWM control commands. The receiver is wired to the RX and TX pins and the built in BEC steps down the VCC voltage to 5V in order to power the receiver. Finally the s1-s4 pins output the pitch roll and yaw commands as servo signals (1000us-2000us). 
+      <br>
+      <br>
+      The ESP32 shares bidirectional power with the flight controller (the 5V pads on both boards support both input and output). During ESP32 configuration the flight controller is powered by the ESP32 and the inverse is true when operating off of battery power. The board's GPIO pins are used for reading servo and I2C data from the flight controller and outputting Dshot commands to the electronic speed controller. 
+
       <br>
     </figcaption>
 
