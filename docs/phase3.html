@@ -117,34 +117,32 @@
   <div class="col-10 text-center py-vh-3">
 <p class="lead" data-aos="fade">
   
-  <p style="font-size: 36px;">PHASE THREE/FOUR OVERVIEW</p>
+  <p style="font-size: 36px;">FINAL PHASE OVERVIEW</p>
   <p style="font-size: 18px;">
-    In this phase, we continued developing our work and achieved our MVP! We initially ran into a major roadblock when our testing rig broke, but overcame this challenge and went on to achieve two-axis control of our rotor system’s thrust vector. 
+    In this phase, we continued developing our work and achieved both our basic goal of demonstrating two-axis control and our stretch goal of flying the helicopter! We initially ran into a major roadblock when our testing rig broke, but overcame this challenge and went on to achieve two-axis control of our rotor system’s thrust vector. We then transitioned our electronics over to our helicopter, did some integration troubleshooting, and flew it.
   <br><br> </p>
 
   <p style="font-size: 24px;">THE EXPLOSION</p>
-  
-  
-  <p style="font-size: 18px;">
-  Much of our work during this phase was precipitated by the explosion of our test rig.
-  <br>
-    [pic17vid: video of explosion here]
-    
-  <br>
 
-  After this breakdown of our testing rig, we discussed possible reasons for the failure. Rewatching videos of the failure of the rig, we saw significant vibrations from the rotor system being transferred to the testing rig and causing significant deformation in our 3D printed attachment pieces. 
-  <br><br>
-  We knew that some vibration was inherent to a swashplateless system – the acceleration and deceleration of our rotor head was what made it work, in theory. However, we seemed to be experiencing far more vibration than made sense. 
-  <br><br>
-  We realized that a lot of this vibration could be attributed to our rotor system. The center of gravity of our system was off-balance from our center of rotation, causing unnecessary vibration.
-  <br><br>
-  [pic18 - side-by-side comparison of old and new rotor systems]
-  <br><br>
-  After making this realization, we redesigned the rotor system so that it was perfectly symmetrical, meaning that its center of gravity would be better aligned with the center of rotation. 
-  <br><br>
-  In addition, our discussion of the inherent vibrations that come as part of a swashplateless rotor system helped us realize that we needed to strengthen our testing rig motor mount. We wanted force from the rotor system to be directly transferred to the testing rig so that we could more easily visualize the effects of our testing. For all of these reasons, we cut a new version of a similar, but strengthened, piece out of quarter-inch aluminum plate. 
-  [pic of aluminum thingy]
-  <br><br>
+  <p style="font-size: 18px;">
+    Much of our work during this phase was precipitated by the explosion of our test rig.
+    <br>
+    [pic17vid: video of explosion here]
+    <br>
+    After this breakdown of our testing rig, we discussed possible reasons for the failure. Rewatching videos of the failure of the rig, we saw significant vibrations from the rotor system being transferred to the testing rig and causing significant deformation in our 3D printed attachment pieces. 
+    <br><br>
+    We knew that some vibration was inherent to a swashplateless system – the acceleration and deceleration of our rotor head was what made it work, in theory. However, we seemed to be experiencing far more vibration than made sense. 
+    <br><br>
+    We realized that a lot of this vibration could be attributed to our rotor system. The center of gravity of our system was off-balance from our center of rotation, causing unnecessary vibration.
+    <br><br>
+    [pic18 - side-by-side comparison of old and new rotor systems]
+    <br><br>
+    After making this realization, we redesigned the rotor system so that it was perfectly symmetrical, meaning that its center of gravity would be better aligned with the center of rotation. 
+    <br><br>
+    In addition, our discussion of the inherent vibrations that come as part of a swashplateless rotor system helped us realize that we needed to strengthen our testing rig motor mount. We wanted force from the rotor system to be directly transferred to the testing rig so that we could more easily visualize the effects of our testing. For all of these reasons, we cut a new version of a similar, but strengthened, piece out of quarter-inch aluminum plate. 
+    [pic of aluminum thingy]
+    <br><br>
+  </p>
 
   <p style="font-size: 24px;">ACHIEVING TWO AXIS CONTROL</p>
   <br><br>
@@ -216,13 +214,17 @@
       <br><br>
       After all of this work on the individual components, we tried putting everything on the helicopter – frame, landing struts, main motor plate, and tail mount, along with all relevant electronics. We knew we needed to do this testing to iron out any kinks we could find. 
       
-      [pic23: picture of our try at putting electronics on the heli from the slides]
+      <img
+        src="img/pic23.png"
+        style= "width: 600px; height: auto; display: block; margin: 1rem auto;">
 
       This assembly test had promising results–everything fit!  We had enough space for all our electronics, while still having solid attachments for all of our frame components, but there were a few other issues that had to be dealt with.
       <br><br>
       Testing revealed a problem with our side plate design: we had no way to plug into and update our flight controller, which was mounted on our motor/electronics mount directly below the motor. It was blocked by the side plate. 
 
-      [pic24: pic of drilled out side frame and redesigned frame side by side.]
+      <img
+        src="img/pic24.png"
+        style= "width: 600px; height: auto; display: block; margin: 1rem auto;">
 
       Our initial fix for this was quick and dirty–we drilled out some holes in the side frame to allow access to the flight controller, but we designed an actual access hole when we ultimately replaced the aluminum side plates with carbon fiber to lightweight the helicopter by ~20grams.
       <br><br>
@@ -230,8 +232,9 @@
       <br><br>
       We started having an issue where the rotorhead hinge began seizing up as a result of the PLA deforming when the motor was run at high speeds for too long, so we began experimenting with resin prints for theoretical higher precision, less friction, and durability. 
 
-      [pic25: pic of resin printed 
-
+      <img
+        src="img/pic25.png"
+        style= "width: 600px; height: auto; display: block; margin: 1rem auto;">
       However, we ultimately concluded that resin was too brittle for our uses after the rotorhead essentially exploded due to shear force twice. Furthermore, the resin prints required much more sanding down and fitting than PLA to make sure the tolerances were correct and as frictionless as possible. The benefits of moving from PLA to resin were simply insufficient to warrant longer print times. To fix the issue of the PLA seizing, we added washers inside the hinge to minimize friction between the parts that made up the hinge which worked.
 
   </p>
@@ -241,13 +244,19 @@
   </p>
 
   <p style="font-size: 18px;">
-    We had reached the final stretch! Our helicopter was assembled and mechanically sound. In the days leading up, we had achieved flight with a semblance of control, but had a lot of trouble controlling drift – our control loop. 
+    We had reached the final stretch! Our helicopter was assembled and mechanically sound. In the days leading up, we had achieved flight with a semblance of control, but had a lot of trouble tuning our control loop. 
 
-    [INSERT VIDEO OF HELICOPTER DRIFTING]
+     <video
+    src="img/pic25vid.mp4"
+    style="width: 600px; height: auto; display: block; margin: 1rem auto;"
+    controls
+    autoplay
+    muted
+    loop>
 
     The helicopter was consistently drifting to the right. We tried both mechanical and software fixes to this challenge–adding more mass to the left side, bumping up our PID values, etc.
     <br><br>
-    Over the course of the night, we did some extensive control tuning–bumping up our proportional and integral constants and doubling the amplitude of the sine wave we used to control the motor. We also tuned our center of gravity, adding an extra aluminum bar in the front of our helicopter. This tuning worked – we were able to obtain controlled, stable flight.
+    Over the course of the night, we did extensive controls tuning–bumping up our proportional and integral constants and doubling the amplitude of the sine wave we used to control the motor. We also tuned our center of gravity, adding an extra aluminum bar in the front of our helicopter. This tuning worked – we were able to obtain controlled, stable flight.
   </p>
 
 
