@@ -136,7 +136,7 @@
   
   <p style="font-size: 36px;">General Project Overview</p>
   <p style="font-size: 18px;">
-  For our final Principles of Integrated Engineering class project, we decided to build a remote-controlled helicopter that can change its pitch and roll output without the need of a swashplate. 
+  For our final Principles of Integrated Engineering class project, we built a remote-controlled helicopter that can change its pitch and roll output without the need of a swashplate. 
   <br><br> </p>
 
   <p style="font-size: 24px;">WHAT IS A SWASHPLATE?</p>
@@ -237,9 +237,21 @@
     src="img/Software diagram.png"
     style="width: 800px; height: auto; display: block; margin: 1rem auto;">
     <figcaption style="text-align: center; margin-top: 0.5rem;">
-      NEEDS DESCRIPTION!!!!  Including per rubric "a detailed description of the software and firmware design swith links to complete source code (github or other repository is helpful). Please be sure to include a list of all external software dependencies (eg. OpenCV, a RaspPI OS, etc.)"
+      Our firmware utilized the following libraries:
+      <a href=https://github.com/iNavFlight/inav target="_blank" rel="noopener noreferrer">
+        iNAV - Configures flight controller. Converts remote controller stick movements into pitch, roll, and yaw PWM signals. Allows us to view what orientation helicopter believes it is in to what it actually is. Supports stable flight. 
+      </a>
+      <a href=https://github.com/RobTillaart/AS5600 target="_blank" rel="noopener noreferrer">
+        AS5600.h - Library for configuring ESP32. Extracts angle measurement from AS5600 encoder.
+      </a>
+      <a href=https://docs.arduino.cc/libraries/ target="_blank" rel="noopener noreferrer">
+        Arduino.h - Library for configuring ESP32. Standard Arduino library needed to run code
+      </a>
+      <a href=https://github.com/derdoktor667/DShotRMT target="_blank" rel="noopener noreferrer">
+        DShotRMT.h - Configures ESP32. Allows for generation of DShot signals on ESP32 microcontrollers for motor control and sending throttle values
+      </a>
       <a href=https://github.com/Fantasticalkiwi/Swashplateless-helicopter target="_blank" rel="noopener noreferrer">
-        GitHub Repository Link
+        GitHub repository link to final firmware uploaded to ESP32 and supplementary firmware used for testing.
         <br>
         <br>
       </a>
