@@ -217,7 +217,14 @@ several additional iterations of this system. <br>
               <h3 class="text-center mb-3">Software - Controls Algorithm</h3>
 
               <p class="fs-5 lh-lg">
-<br>We continued developing our firmware and communications protocols. 
+<br>We continued developing our firmware and communications protocols. At this stage, the swashplateless rotor system is running off
+ of serial command from the user on a computer that is physically
+  connected to the ESP32. The ESP32 is reading the encoder with 
+  I2C, calculating the output, then writing DSHOT commands to the
+   electronic speed controller (ESC). DSHOT is a racing drone
+    protocol used for its high speed communicating rate. 
+    The ESP32 is constantly running this loop and writing to the ESC
+     based on Throttle, Pitch, and Roll commands from the user.<br>
               </p>
 
               <!-- flowchart from sprint 2 -->
@@ -237,17 +244,6 @@ several additional iterations of this system. <br>
               <div class="my-4 text-center">
                 <img src="img/Circuit%20diagram.png" class="img-fluid rounded shadow" alt="Circuit diagram">
               </div>
-
-              <p class="fs-5 lh-lg">
-<br>At this stage, the swashplateless rotor system is running off
- of serial command from the user on a computer that is physically
-  connected to the ESP32. The ESP32 is reading the encoder with 
-  I2C, calculating the output, then writing DSHOT commands to the
-   electronic speed controller (ESC). DSHOT is a racing drone
-    protocol used for its high speed communicating rate. 
-    The ESP32 is constantly running this loop and writing to the ESC
-     based on Throttle, Pitch, and Roll commands from the user.<br>
-              </p>
             </div>
 
             <!--TESTING OUR SWASHPLATELESS SYSTEM -->
@@ -305,11 +301,6 @@ The main plate was mounted at the top, the landing struts were
               <!-- pic14 -->
               <div class="my-4 text-center">
                 <img src="img/frameidietion.png" class="img-fluid rounded shadow" alt="pic14">
-              </div>
-
-              <!-- pic15 -->
-              <div class="my-4 text-center">
-                <img src="img/initialmotordirectiveview.png" class="img-fluid rounded shadow" alt="pic15">
               </div>
 
             </div>
