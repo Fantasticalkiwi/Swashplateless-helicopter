@@ -99,14 +99,11 @@
               <h3 class="text-center mb-3">Mechanical - Rotor System</h3>
               <p class="fs-5 lh-lg">
 
-<br>[pic8-pic of prev rotor system - NEED] <br><br>
-
 In this phase, we made some improvements to our rotor system. 
 We had noticed that it was very “wiggly,” being unconstrained 
 in axes beyond our intended ones. We added additional constraint
  by switching from a single to a double shear configuration. <br>
 
-<br>[pic9 - pic of new rotor system - NEED]<br>
 <br>As part of this redesign, we constrained the dowel by using 
 heat-set inserts with inset screws to hold the dowels in place. 
 We also implemented a double shear as opposed to a single shear 
@@ -125,6 +122,17 @@ Technically, this introduces more friction,
                 <br><br>
 
               </p>
+
+              <!-- pic8 -->
+              <div class="my-4 text-center">
+                <img src="img/initialmotorfrontview.png" class="img-fluid rounded shadow" alt="pic8">
+              </div>
+
+              <!-- pic9 -->
+              <div class="my-4 text-center">
+                <img src="img/newrotorheadattached.png" class="img-fluid rounded shadow" alt="pic9">
+              </div>
+
             </div>
 
             <!-- TESTING RIG -->
@@ -141,8 +149,6 @@ was square aluminum tubing, not 8020. We changed our pivot mount
 so that it would fit on this tubing. After initially attempting to
  create a perfect pressfit, we decided to instead use screws to
   create friction to keep the mount securely on the broader cage. <br>
-
-<br>[pic11 - vid of completed testing rig]<br>
               </p>
 
               <div class="my-4 text-center">
@@ -150,7 +156,6 @@ so that it would fit on this tubing. After initially attempting to
                   <source src="img/pic11vid%20(1).mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
-                <p class="text-muted mt-2"><small>insert caption here</small></p>
               </div>
 
               <p class="fs-5 lh-lg">
@@ -176,19 +181,21 @@ in place, making the two-axis rig into a one-axis rig. <br>
 a means of attaching the motor and rotor system to the testing rig.
  Initially, we had a setup in which the motor was connected to
   sliders for the 8020 “seesaw” on our testing rig. <br>
-<br>[pic12 - setup before esp32 mount]<br>
 
 <br>At the same time, we were beginning to think about how we would
  mount our electronics. Our flight controller, electronic speed 
  controller (ESC), and ESP32 had all arrived, so we were doing 
  initial brainstorming on attaching all of them to the helicopter<br>
-
-<br>[pic13 - with esp32 mount]<br>
               </p>
 
+              <!-- pic12 -->
+              <div class="my-4 text-center">
+                <img src="img/initialassembly.png" class="img-fluid rounded shadow" alt="pic12">
+              </div>
+
+              <!-- pic13 -->
               <div class="my-4 text-center">
                 <img src="img/pic13%20(1).jpeg" class="img-fluid rounded shadow" alt="pic13 - with esp32 mount">
-                <p class="text-muted mt-2"><small>insert caption here</small></p>
               </div>
 
               <p class="fs-5 lh-lg">
@@ -211,23 +218,24 @@ several additional iterations of this system. <br>
 
               <p class="fs-5 lh-lg">
 <br>We continued developing our firmware and communications protocols. 
-<br>[insert pic of the flowchart from sprint 2]<br>
               </p>
+
+              <!-- flowchart from sprint 2 -->
+              <div class="my-4 text-center">
+                <img src="img/electronicmounting.png" class="img-fluid rounded shadow" alt="flowchart from sprint 2">
+              </div>
 
               <div class="my-4 text-center">
                 <img src="img/Energy_signal%20flow%20diagram%20(1).png" class="img-fluid rounded shadow"
                   alt="Energy_signal flow diagram (1)">
-                <p class="text-muted mt-2"><small>insert caption here</small></p>
               </div>
 
               <div class="my-4 text-center">
                 <img src="img/Software%20diagram.png" class="img-fluid rounded shadow" alt="Software diagram">
-                <p class="text-muted mt-2"><small>insert caption here</small></p>
               </div>
 
               <div class="my-4 text-center">
                 <img src="img/Circuit%20diagram.png" class="img-fluid rounded shadow" alt="Circuit diagram">
-                <p class="text-muted mt-2"><small>insert caption here</small></p>
               </div>
 
               <p class="fs-5 lh-lg">
@@ -253,7 +261,6 @@ and the rig pinned to one-axis mode, we began testing.
 We needed to tune the mechanical system and figure out software 
 issues. With some debugging and other troubleshooting, 
 we got it to work!<br>
-<br>[insert video of demo here]<br>
                </p>
 
               <div class="my-4 text-center">
@@ -261,7 +268,6 @@ we got it to work!<br>
                   <source src="img/pic4vid%20(1).mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
-                <p class="text-muted mt-2"><small>insert caption here</small></p>
               </div>
             </div>
 
@@ -272,8 +278,6 @@ we got it to work!<br>
 <br>When our more mechanically-minded team members weren’t working on
  the testing rig, rotor system, or electronics mounting, we spent
   time developing our helicopter’s mechanical layout and parts.<br>
-
-<br>[pic14 - frame discussion pic]<br><br>
 
 <br>We started by brainstorming the frame. 
 We decided that we wanted a rig based around two side plates
@@ -287,8 +291,6 @@ The main plate was mounted at the top, the landing struts were
   and the tail was in the back. The design was inspired by 
   Tom Stanton’s swashplateless helicopter. <br>
 
-<br>[pic15 - screenshot of side plate at this point in design cycle]<br><br>
-
 <br>We planned to waterjet our side plates out of 16th inch
  aluminum. Everything else would be 3D printed, besides possibly 
  a standoff we’d lathe for the very front to hold the battery.<br> 
@@ -299,21 +301,35 @@ The main plate was mounted at the top, the landing struts were
  crossbars. <br>
 
               </p>
+
+              <!-- pic14 -->
+              <div class="my-4 text-center">
+                <img src="img/frameidietion.png" class="img-fluid rounded shadow" alt="pic14">
+              </div>
+
+              <!-- pic15 -->
+              <div class="my-4 text-center">
+                <img src="img/initialmotordirectiveview.png" class="img-fluid rounded shadow" alt="pic15">
+              </div>
+
             </div>
 
             <!-- RECAP -->
             <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="text-center mb-3">Recap</h3>
               <p class="fs-5 lh-lg">
-<br>[pic16 -  the timeline created for the sprint review]<br><br>
 We achieved a great deal in this phase! We created a mini-timeline
 for our minimum viable product (the two-axis control of thrust 
 vector on the testing rig). We were doing well on that timeline,
  and also making good progress on the helicopter’s mechanical 
  design, too. Onto the next phase!<br><br>
-
-[insert link to phase review slides]
               </p>
+
+              <!-- pic16 -->
+              <div class="my-4 text-center">
+                <img src="img/pic_progression_v2.png" class="img-fluid rounded shadow" alt="pic16">
+              </div>
+
             </div>
 
           </div>
