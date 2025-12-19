@@ -60,6 +60,7 @@
 
   <main>
 
+
     <!-- INTRO -->
     <div class="py-vh-4">
       <div class="container">
@@ -67,21 +68,16 @@
           <div class="col-12 col-lg-10 text-center">
 
             <p class="lead fs-5 lh-lg" data-aos="fade">
-              <b>Phase Test</b><br><br>
+              <b>Phase 2</b><br><br>
 
               <b>Introduction</b><br>
-              Sprint 1 was our initial ideation and testing portion.
-              We had come into the project knowing that we wanted to build a helicopter with a swashplateless rotor system,
-              so we started by gaining a basic understanding of this system and then went on to set goals. We primarily worked on initial prototyping,
-              requirements definition, and test rig setup in this phase.
+             This phase was focused on refinement of the progress started in the previous phase. 
+              Our goals for this phase: 
+              1. Refine our rotor system <br>
+              2. Add a second axis to our testing rig <br>
+              3. Write an initial version of the controls algorithm for our rotor system <br>
+              4. Begin testing the rotor system on our rig <br>
               <br><br>
-
-              <b>Goals for Sprint 1</b><br>
-              1. Order the swashplateless system’s motors and electronics <br>
-              2. Make a two axis testing rig capable of pivoting in all of our relevant directions <br>
-              3. Make an initial prototype for our swashplateless mechanical system
-            </p>
-
           </div>
         </div>
       </div>
@@ -96,102 +92,102 @@
 
             <h2 class="text-center mb-5">Initial Design and Integration</h2>
 
+            <!-- Rotor System -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">ROTOR SYSTEM</h3>
+              <p class="fs-5 lh-lg">
+
+[pic8-pic of prev rotor system - NEED]
+
+In this phase, we made some improvements to our rotor system. We had noticed that it was very “wiggly,” being unconstrained in axes beyond our intended ones. We added additional constraint by switching from a single to a double shear configuration. 
+
+[pic9 - pic of new rotor system - NEED]
+As part of this redesign, we constrained the dowel by using heat-set inserts with inset screws to hold the dowels in place. We also implemented a double shear as opposed to a single shear for a stronger and more stable hinge. Technically, this introduces more friction, but this is easily overcome by slightly increasing tolerances.
+
+Finally, we realized that the blades had no initial pitch at baseline and therefore were not generating any upward thrust. We redesigned the hinge such that the blade was now held at a 7 degree angle off the horizontal when the rotor itself was held straight. In the process of this change, we also moved the hinge closer to the center of rotation, reducing the inertia and drag of the rotor system. 
+
+                <br><br>
+
+              </p>
+            </div>
+
             <!-- TESTING RIG -->
             <div class="border-top py-vh-4" data-aos="fade-up">
-              <h3 class="mb-3">Mechanical - Testing Rig</h3>
+              <h3 class="mb-3">TESTING RIG</h3>
               <p class="fs-5 lh-lg">
-                Our idea was to have a rig with 2 pivots.
-                One would allow us to see how our rotor system responded to roll inputs by the controller,
-                and the second pivot would allow us to see how it responded to pitch inputs.
-                Our goal was to have two-axis thrust vector control before mounting all of the components on the helicopter.
-                We started by designing and fabricating the single-axis testing stand. Once everything was mounted correctly,
-                we could analyze the net thrust vector for the roll inputs. Once we designed and implemented one-axis control,
-                we added a second pivot to our testing rig for pitch inputs. Once everything was integrated,
-                we could test how our rotor system responded to the pitch and roll inputs done by the controller,
-                and could begin advancing the design of the rotor system.
-                <br><br>
+As we transitioned into this phase, we were given a testing cage by the class teaching team (“The Thunderdome”) to run testing of our rotor system while maintaining safety. 
 
-                We knew we wanted to base everything around using 8020 aluminum extrusions,
-                as they are a very common prototyping material which we had easy access to.
-                For this first iteration of the testing rig, we only tried to have a single axis of rotation.
-                <br><br>
+The attachment point for our testing rig to the Thunderdome was square aluminum tubing, not 8020. We changed our pivot mount so that it would fit on this tubing. After initially attempting to create a perfect pressfit, we decided to instead use screws to create friction to keep the mount securely on the broader cage. 
 
-                [pic6]
-                <br><br>
+[pic11 - vid of completed testing rig]
 
-                Once we had done some initial ideation, we went on to do press fit testing for the 8020.
-                We had previously worked with the material, but wanted a better press fit so that we could minimize
-                wiggle caused by the testing rig– the more solid the connections, the better.
-                We went through multiple iterations before landing on an effective sizing.
-                <br><br>
+Once we had figured out this lower mount, we decided to continue improving the testing rig by adding a second axis of rotation. Our primary requirement for this second axis was that it could be easily converted into a one-axis testing system – we knew we’d want to initially test with one axis, then two, so an easy transition between the two would be useful. 
 
-                Once we had our pressfit sizing set,
-                we designed and printed the pivot for the top and the mount for the bottom.
-                With both, we used our pressfit sizing.
-                We did our best to minimize filament use and printing
-                time by using lower infill and removing extraneous material in the parts.
-                <br><br>
+We made this transition simple by making it so that a pin could be inserted into the pivots of the first axis of rotation to hold them in place, making the two-axis rig into a one-axis rig. 
 
-                At this point, we had the main portion of the testing rig complete. However, we still needed to work on the upper portion,
-                where the rotor system would be attached. We used our previous 8020 pressfit testing to create
-                a piece that would slot into one side, then serve as a pivot for the rest.
-                <br><br>
-
-                [Pic7 - final testing rig]
-                <br><br>
-
-                We ended up using wood screws to attach the base to a 2x4,
-                with the intention of clamping the 2x4 to a table or pair of chairs whenever we wanted to test.
-                We discovered a little wiggliness in the various pieces as well,
-                and decided to hold them in with wood screws through the 3D prints–it held securely,
-                didn’t destroy the 80/20, and was quick and easy to mount.
               </p>
             </div>
 
-            <!-- SWASHPLATELESS SYSTEM -->
-            <div class="border-top py-vh-4" data-aos="fade-up">
-              <h3 class="mb-3">Mechanical - Swashplateless Pivot System</h3>
-              <p class="fs-5 lh-lg">
-                While designing our first version of our rotor system, we knew a few considerations we needed to keep in mind <br>
-                We needed a pivot which would allow the pitch angle to change with rapid changes in speed <br>
-                Needed to be able to be mounted on a motor <br>
-                Needed to be low-friction. <br>
-                Rotors need to be same radius from center <br><br>
-
-                Based on these requirements, we created an initial prototype. This prototype consisted of a 3D printed hinge in single shear held together by an underconstrained dowel. This was just a proof of concept that this design was sufficient for blade actuation and was not yet integrated with the motor.
-              </p>
-            </div>
-
-            <!--ELECTRONICS, FIRMWARE, CONTROLS, MOTORS -->
+            <!--MOTOR/PROPELLER/ELECTRONICS  MOUNT -->
             <div class = "border-top py-vh-4" data-aos="fade-up">
-              <h3 class="mb-3">Electronics, Firmware, Controls, Motors</h3>
+              <h3 class="mb-3">MOTOR/PROPELLER/ELECTRONICS  MOUNT</h3>
               <p class="fs-5 lh-lg">
-                We put Logan and Sky on the task of speccing out all components because 
-                the two of them had significant experience building flying things 
-                – on Olin’s Aero club, building planes, FPV drones etc. <br>
-                The first thing we did was determine a basic, 
-                birds-eye view of electronics and firmware. <br> 
+While undergoing our testing rig redesign, we also had to create a means of attaching the motor and rotor system to the testing rig. Initially, we had a setup in which the motor was connected to sliders for the 8020 “seesaw” on our testing rig. 
+[pic12 - setup before esp32 mount]
 
-                <br> [picture of birds-eye view] <br> <br>
+At the same time, we were beginning to think about how we would mount our electronics. Our flight controller, electronic speed controller (ESC), and ESP32 had all arrived, so we were doing initial brainstorming on attaching all of them to the helicopter
 
-                After deciding on our ____ <br>
+[pic13 - with esp32 mount]
+We found the CAD for all our electronics, decided on hole patterns, and printed out initial versions. After creating these initial patterns, we realized that the same hole pattern could be very easily used for mounting our motor on our testing rig. So we did. It worked perfectly. 
 
-
-                Decided to go with _____ motor because they did. <br>
-
-                Decided to go with ____ flight controller because they did. <br>
-
-                Ordered all relevant electronics and motors. We’re planning to wait on the tail motor
-                 – we have motors accessible through aero which we can use. <br>
+We continued developing this same electronics mount for use on the helicopter, as a main plate where we would mount the flight controller, ESP32, and motor/rotor system. We went through several additional iterations of this system. 
               </p>
-              <!--Tail Rotor Calculations -->
+              <!--CONTROLS ALGORITHM:-->
               <div class = "border-top py-vh-4" data-aos="fade-up">
-              <h3 class="mb-3">Tail Rotor Calculations</h3>
+              <h3 class="mb-3">CONTROLS ALGORITHM</h3>
               <p class="fs-5 lh-lg">
-                  We needed a tail rotor.. blah blah blah <br> 
-                   <br> [Summary of Calculation  results] <br>
-                  <br> insert tail calculation pictures <br>
+ 
+We continued developing our firmware and communications protocols. 
+[insert pic of the flowchart from sprint 2]
+
+At this stage, the swashplateless rotor system is running off of serial command from the user on a computer that is physically connected to the esp32. The esp32 is reading the encoder with I2C, calculating the output, then writing DSHOT commands to the electronic speed controller (ESC). DSHOT is a racing drone protocol used for its high speed communicating rate. The ESP is constantly running this loop and writing to the ESC based on Throttle, Pitch, and Roll commands from the user.
               </p>
+
+              <!--TESTING OUR SWASHPLATELESS SYSTEM -->
+              <div class = "border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">TESTING OUR SWASHPLATELESS SYSTEM</h3>
+              <p class="fs-5 lh-lg">
+                
+With our motor and electronics mounted onto our testing rig, and the rig pinned to one-axis mode, we began testing. We needed to tune the mechanical system and figure out software issues. With some debugging and other troubleshooting, we got it to work!
+[insert video of demo here]
+               </p>
+
+              <!--HELICOPTER FRAME INTEGRATED DESIGN -->
+              <div class = "border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">HELICOPTER FRAME INTEGRATED DESIGN</h3>
+              <p class="fs-5 lh-lg">
+When our more mechanically-minded team members weren’t working on the testing rig, rotor system, or electronics mounting, we spent time developing our helicopter’s mechanical layout and parts.
+
+[pic14 - frame discussion pic]
+
+We started by brainstorming the frame. We decided that we wanted a rig based around two side plates–one on each side. The electronics, motor, and so on would all be sandwiched between these two plates, with the tail jutting out. Based on this decision making, we began designing the helicopter. 
+
+We designed the side plates to look vaguely helicopter-ish. The main plate was mounted at the top, the landing struts were at the bottom, the battery was in the front to balance out weight, and the tail was in the back. The design was inspired by Tom Stanton’s swashplateless helicopter. 
+
+[pic15 - screenshot of side plate at this point in design cycle]
+
+We planned to waterjet our side plates out of 16th inch aluminum. Everything else would be 3D printed, besides possibly a standoff we’d lathe for the very front to hold the battery. 
+
+We planned to mount our main electronics/motor/etc plate onto two crossbars at the top of the frame. Our ESC would be attached on the side of the frame, and we would use the landing struts as crossbars. 
+
+              </p>
+            <br> <br> <p>
+              PHASE RECAP
+[pic16 -  the timeline created for the sprint review]
+We achieved a great deal in this phase! We created a mini-timeline for our minimum viable product (the two-axis control of thrust vector on the testing rig). We were doing well on that timeline, and also making good progress on the helicopter’s mechanical design, too. Onto the next phase!
+
+[insert link to phase review slides]
+            </p>
             </div>
 
           </div>
