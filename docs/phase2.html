@@ -1,250 +1,212 @@
 <!doctype html>
 <html class="h-100" lang="en">
 
-  <head>
-      <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A growing collection of ready to use components for the CSS framework Bootstrap 5">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href=".t/img/favicon.png">
-  <meta name="author" content="Kai-Xing Yue">
-  <meta name="generator" content="Eleventy v2.0.0">
-  <meta name="HandheldFriendly" content="true">
-  <title>Less Blades, More Fun! Overview</title>
+
+  <title>Phase One</title>
+
   <link rel="stylesheet" href="css/theme.min.css">
 
-   <style>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      src: url('./fonts/inter-v12-latin-300.woff2') format('woff2');
+    }
 
-/* inter-300 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('./fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      src: url('./fonts/inter-v12-latin-500.woff2') format('woff2');
+    }
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local(''),
-       url('./fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local(''),
-       url('./fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      src: url('./fonts/inter-v12-latin-700.woff2') format('woff2');
+    }
+  </style>
+</head>
 
-</style>
+<body data-bs-spy="scroll" data-bs-target="#navScroll">
 
-  </head>
-
-  <body data-bs-spy="scroll" data-bs-target="#navScroll">
-
-    <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top" tabindex="0">
-  <div class="container">
-    <a class="navbar-brand pe-4 fs-4" href="index.html">
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half" viewbox="0 0 16 16">
-    <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z"/>
-  </svg>
-  <span class="ms-1 fw-bolder">Less Blades, More Fun!</span>
-</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-    <a class="nav-link" href="index.html" aria-label="Brings you to the frontpage">
-      Overview
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="phase1.html">
-      Phase 1
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="phase2.html">
-      Phase 2
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="phase3.html">
-      Phase 3
-    </a>
-  </li>
-    <!--
-    </ul>
-      <a href="https://templatedeck.com/Less Blades, More Fun!-html-template.html" data-splitbee-event="Click Download" aria-label="Download this template" class="link-dark pb-1 link-fancy me-2">
-        Download this Template       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download ms-1" viewBox="0 0 16 16">
-                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-              </svg>
+  <!-- NAVBAR -->
+  <nav id="navScroll" class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand pe-4 fs-4" href="index.html">
+        <span class="fw-bolder">Less Blades, More Fun!</span>
       </a>
 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link active" href="phase1.html">Phase 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="phase2.html">Phase 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="phase3.html">Phase 3</a></li>
+        </ul>
+      </div>
     </div>
-  -->
-</div>
-</nav>
+  </nav>
 
-    <main>
-      <div class="w-100 overflow-hidden bg-gray-100" id="top">
-  
-</div>
+  <main>
 
-</div>
-
-
-<!-- ******************** START OF TEXT ******************-->
-
-<div class="py-vh-4 d-flex align-items-center">
+    <!-- INTRO -->
+    <div class="py-vh-4">
       <div class="container">
-<div class="row d-flex justify-content-center">
-  <div class="col-10 text-center py-vh-3">
-<p class="lead" data-aos="fade">
-  
-  <p style="font-size: 36px;">General Project Overview -- PHASE 2</p>
-  <p style="font-size: 18px;">
-  For our final Principles of Integrated Engineering class project, we decided to build a remote-controlled helicopter  that can change its pitch and roll output without the need of a swashplate. 
-  <br><br> </p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 text-center">
 
-  <p style="font-size: 24px;">WHAT IS A SWASHPLATE?</p>
-  
-  
-  <p style="font-size: 18px;">
-  To understand the “why” behind the mechanics of swashplates, we first need to understand how a helicopter uses its main rotor to fly.<br><br>
+            <p class="lead fs-5 lh-lg" data-aos="fade">
+              <b>Phase Test</b><br><br>
 
-  The main rotor provides the vertical thrust needed to overcome gravity. The propeller's velocity controls the helicopter's rate of ascent or descent. Adjusting the pitch of its blades with reference to a neutral axis will adjust its net thrust vector, which will move the helicopter <b>forward, backward, or sideways</b>.
-  <br><br>
-  When the thrust vector is angled forwards, the helicopter moves forwards. When it is angled back, the helicopter moves back. 
-  <br><br>
-  </p>
+              <b>Introduction</b><br>
+              Sprint 1 was our initial ideation and testing portion.
+              We had come into the project knowing that we wanted to build a helicopter with a swashplateless rotor system,
+              so we started by gaining a basic understanding of this system and then went on to set goals. We primarily worked on initial prototyping,
+              requirements definition, and test rig setup in this phase.
+              <br><br>
 
-  <!-- **** pic1 go here ****-->
-  <img
-    src="img/Pic1_cc (1).png"
-    style= "width: 600px; height: auto; display: block; margin: 1rem auto;">
+              <b>Goals for Sprint 1</b><br>
+              1. Order the swashplateless system’s motors and electronics <br>
+              2. Make a two axis testing rig capable of pivoting in all of our relevant directions <br>
+              3. Make an initial prototype for our swashplateless mechanical system
+            </p>
 
-  <p style="font-size: 18px;">
-  Normal helicopters control the direction of their thrust vectors with a swashplate, a mechanical system to alter the pitch of the rotors through the full rotation. This system is mechanically complex and requires at least one additional actuator.
-  
-  <br> <br>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  After seeing a Tom Stanton video in which he made a swashplateless helicopter, we were inspired to make our own.
+    <!-- MAIN CONTENT -->
+    <div class="bg-white py-vh-4">
+      <div class="container">
+        <div class="row justify-content-center">
 
-  <br><br></p>
+          <div class="col-12 col-lg-11 col-xl-10">
 
-  <p style="font-size: 24px;">HOW A SWASHPLATE WORKS</p>
+            <h2 class="text-center mb-5">Initial Design and Integration</h2>
 
-  <!-- **** pic2 go here ****-->
-  <img
-    src="img/pic2v2.png"
-    style="width: 600px; height: auto; display: block; margin: 1rem auto;">
+            <!-- TESTING RIG -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">Mechanical - Testing Rig</h3>
+              <p class="fs-5 lh-lg">
+                Our idea was to have a rig with 2 pivots.
+                One would allow us to see how our rotor system responded to roll inputs by the controller,
+                and the second pivot would allow us to see how it responded to pitch inputs.
+                Our goal was to have two-axis thrust vector control before mounting all of the components on the helicopter.
+                We started by designing and fabricating the single-axis testing stand. Once everything was mounted correctly,
+                we could analyze the net thrust vector for the roll inputs. Once we designed and implemented one-axis control,
+                we added a second pivot to our testing rig for pitch inputs. Once everything was integrated,
+                we could test how our rotor system responded to the pitch and roll inputs done by the controller,
+                and could begin advancing the design of the rotor system.
+                <br><br>
 
-  <p style="font-size: 18px;">
-  A swashplateless system changes the direction of its thrust vector through a control system which speeds up and down the rotor through its rotation. The inertia of the rotor causes it to swing forward or backwards. When mounted on an angled pivot, this swing can change the pitch angle of the rotor. 
-  
-  <br> <br>
+                We knew we wanted to base everything around using 8020 aluminum extrusions,
+                as they are a very common prototyping material which we had easy access to.
+                For this first iteration of the testing rig, we only tried to have a single axis of rotation.
+                <br><br>
 
-  This method reduces mechanical complexity; the complexity is transferred over to the controls for the rotor system. This reduction in complexity enables smaller helicopters, which is pretty cool to think about. 
+                [pic6]
+                <br><br>
 
-  <br><br></p>
+                Once we had done some initial ideation, we went on to do press fit testing for the 8020.
+                We had previously worked with the material, but wanted a better press fit so that we could minimize
+                wiggle caused by the testing rig– the more solid the connections, the better.
+                We went through multiple iterations before landing on an effective sizing.
+                <br><br>
 
-  <p style="font-size: 36px;">PROJECT GOALS AND RESULTS</p>
+                Once we had our pressfit sizing set,
+                we designed and printed the pivot for the top and the mount for the bottom.
+                With both, we used our pressfit sizing.
+                We did our best to minimize filament use and printing
+                time by using lower infill and removing extraneous material in the parts.
+                <br><br>
+
+                At this point, we had the main portion of the testing rig complete. However, we still needed to work on the upper portion,
+                where the rotor system would be attached. We used our previous 8020 pressfit testing to create
+                a piece that would slot into one side, then serve as a pivot for the rest.
+                <br><br>
+
+                [Pic7 - final testing rig]
+                <br><br>
+
+                We ended up using wood screws to attach the base to a 2x4,
+                with the intention of clamping the 2x4 to a table or pair of chairs whenever we wanted to test.
+                We discovered a little wiggliness in the various pieces as well,
+                and decided to hold them in with wood screws through the 3D prints–it held securely,
+                didn’t destroy the 80/20, and was quick and easy to mount.
+              </p>
+            </div>
+
+            <!-- SWASHPLATELESS SYSTEM -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">Mechanical - Swashplateless Pivot System</h3>
+              <p class="fs-5 lh-lg">
+                While designing our first version of our rotor system, we knew a few considerations we needed to keep in mind <br>
+                We needed a pivot which would allow the pitch angle to change with rapid changes in speed <br>
+                Needed to be able to be mounted on a motor <br>
+                Needed to be low-friction. <br>
+                Rotors need to be same radius from center <br><br>
+
+                Based on these requirements, we created an initial prototype. This prototype consisted of a 3D printed hinge in single shear held together by an underconstrained dowel. This was just a proof of concept that this design was sufficient for blade actuation and was not yet integrated with the motor.
+              </p>
+            </div>
+
+            <!--ELECTRONICS, FIRMWARE, CONTROLS, MOTORS -->
+            <div class = "border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">Electronics, Firmware, Controls, Motors</h3>
+              <p class="fs-5 lh-lg">
+                We put Logan and Sky on the task of speccing out all components because 
+                the two of them had significant experience building flying things 
+                – on Olin’s Aero club, building planes, FPV drones etc. <br>
+                The first thing we did was determine a basic, 
+                birds-eye view of electronics and firmware. <br> 
+
+                <br> [picture of birds-eye view] <br> <br>
+
+                After deciding on our ____ <br>
 
 
-  <p style="font-size: 18px;">
-  <b>Goal 1:</b> Build a swashplateless rotor system that can alter its thrust vector using a motor control algorithm and demonstrate 1-axis and 2-axis control in testing [CHECK!]
-  <br>
- <b>Goal 2</b> (STRETCH GOAL): Build a helicopter with a swashplateless system and tune control software to make swashplateless helicopter fly [CHECK!]
+                Decided to go with _____ motor because they did. <br>
 
-  <p style="font-size: 24px;">RESULTS</p>
-  <p style="font-size: 18px;">
-  <b>Goal 1 Result:</b> We built a swashplateless system and demonstrated 1- and 2-axis control with a testing rig. 
-  </p>
-  <video
-    src="img/pic4vid (1).mp4"
-    style="width: 600px; height: auto; display: block; margin: 1rem auto;"
-    controls
-    autoplay
-    muted
-    loop>
+                Decided to go with ____ flight controller because they did. <br>
 
-  </video>
-  <p style="font-size: 18px;">
-  <b>Goal 2 Result:</b> We built and flew a helicopter utilizing our swashplateless system.
-  <video
-    src="img/pic5vid.mp4"
-    style="width: 400px; height: auto; display: block; margin: 1rem auto;"
-    controls
-    autoplay
-    muted
-    loop>
+                Ordered all relevant electronics and motors. We’re planning to wait on the tail motor
+                 – we have motors accessible through aero which we can use. <br>
+              </p>
+              <!--Tail Rotor Calculations -->
+              <div class = "border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">Tail Rotor Calculations</h3>
+              <p class="fs-5 lh-lg">
+                  We needed a tail rotor.. blah blah blah <br> 
+                   <br> [Summary of Calculation  results] <br>
+                  <br> insert tail calculation pictures <br>
+              </p>
+            </div>
 
-  <br><br>
-  
-  As shown in the images and videos, we achieved all of our project goals. Our progress was marked by distinct phases, each culminating in a phase review. To see our progression from ideation to final product, review the <b> phase pages </b> in the menu.  Additional information (budget, circuit schematic, etc.) is shown in the Miscellaneous section below. 
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <br><br></p>
-  <br><br>
-  <p style="font-size: 36px;">MISCELLANEOUS INFORMATION</p>
-  
-  <p style="font-size: 24px;">General Series of Progression</p>
-  <img
-    src="img/Progression towards goals.png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
+  </main>
 
-  <p style="font-size: 24px;">Energy and Signal Flow Diagram</p>
-  <img
-    src="img/Energy_signal flow diagram (1).png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
-  
-  <br>
-  <p style="font-size: 24px;">Software Structure Diagram</p>
-  <img
-    src="img/Software diagram.png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
-    <figcaption style="text-align: center; margin-top: 0.5rem;">
-      NEEDS DESCRIPTION!!!!  Including per rubric "a detailed description of the software and firmware design swith links to complete source code (github or other repository is helpful). Please be sure to include a list of all external software dependencies (eg. OpenCV, a RaspPI OS, etc.)"
-    </figcaption>
-  <br>
+  <!-- SCRIPTS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+  </script>
 
-  <p style="font-size: 24px;">Circuit Schematic</p>
-  <img
-    src="img/Circuit diagram.png"
-    style="width: 500px; height: auto; display: block; margin: 1rem auto;">
-    <figcaption style="text-align: center; margin-top: 0.5rem;">
-      NEEDS DESCRIPTION!!!!  
-    </figcaption>
-
-  <p style="font-size: 24px;">Final helicopter CAD</p>
-  
-  <p style="font-size: 24px;">Final helicopter CAD</p>
-
-    
-  <br>
-  <p style="font-size: 24px;">Budget Spreadsheet</p>
-  <img
-    src="img/Budget finalized.png"
-    style="width: 800px; height: auto; display: block; margin: 1rem auto;">
-    <figcaption style="text-align: center; margin-top: 0.5rem;">
-      Please note that "Unit cost" means total cost of the item (including shipping) if we had purchased it. Total cost is the actual amount each item cost us (many items were already available)
-    </figcaption>
-    
-
-  </body>
+</body>
 </html>
