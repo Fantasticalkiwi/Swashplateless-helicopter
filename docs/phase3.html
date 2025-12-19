@@ -143,6 +143,7 @@
   After making this realization, we redesigned the rotor system so that it was perfectly symmetrical, meaning that its center of gravity would be better aligned with the center of rotation. 
   <br><br>
   In addition, our discussion of the inherent vibrations that come as part of a swashplateless rotor system helped us realize that we needed to strengthen our testing rig motor mount. We wanted force from the rotor system to be directly transferred to the testing rig so that we could more easily visualize the effects of our testing. For all of these reasons, we cut a new version of a similar, but strengthened, piece out of quarter-inch aluminum plate. 
+  [pic of aluminum thingy]
   <br><br>
 
   <p style="font-size: 24px;">ACHIEVING TWO AXIS CONTROL</p>
@@ -150,11 +151,10 @@
   </p>
 
   <p style="font-size: 18px;">
-    Once we had redesigned our swashplate and strengthened our testing rig, we went back to testing.  We fully achieved two-axis control! This was our initial goal for the whole project, so it felt good to achieve. 
+    Once we had redesigned our swashplate and strengthened our testing rig, we went back to testing.  After some time tuning variables, we fully achieved two-axis control! This was our initial goal for the whole project, so it felt good to achieve. 
     <br><br>
     [pic19vid - insert video of two-axis control working!!!]
     <br><br>
-    Achieving two-axis control required some work and tuning from the first stage. We had to balance the rotorhead and test stand to enable us to see if roll was changing. We dealt with a full system rapid unscheduled disassembly due to rotor imbalance. This required redesign and build of the test system.
 
   </p>
 
@@ -175,10 +175,84 @@
     <br><br>
     Once we had printed our main plate and waterjetted our side plates, we began putting them together and figuring out sizing. We realized that we could reduce part count further and increase ease of assembly by using heat-set inserts rather than nuts for many connections of our main plate, so we remade the plate to accept headset inserts. 
     <br><br>
-    We designed a mount for our tail tube out of 3D printed material, with the same basic considerations–we wanted it to be low-part-count, easy to assemble, and strong. We created a motor tail mount that was essentially a plug glued into the tail rod.
-
+    We designed a mount for our tail tube out of 3D printed material, with the same basic considerations; we wanted it to be low-part-count, easy to assemble, and strong. We created a motor tail mount that was essentially a plug glued into the tail rod.
 
   </p>
+    <p style="font-size: 24px;">TAIL WORK [ELIAM DO!!!]</p>
+    <br><br>
+    </p>
+
+    <p style="font-size: 18px;">
+    <b>
+    The tail section had 5 major components:
+    Tail shaft: Our tail shaft was a 250 mm carbon fiber shaft with a 5mm outer diameter (change) and a 3 millimeter inner diameter (change).
+    [Insert CAD pic]
+    <br><br>
+    Tail motor: We choose a [name of motor] capable of providing [motor specs]
+    [Link to Tail motor calculations]
+    [Insert CAD pic]
+    <br><br>
+    Tail rotor: We had a 60 mm tail rotor (check this) 
+    [Insert CAD pic]
+    <br><br>
+    Tail shaft mount: We used a set-screw mechanism to clamp the tail to the main body of the helicopter
+    [Insert CAD pic]
+    <br><br>
+    Tail motor mount: Our mount has a place for the tail motor and supports that align with the landing gear for extra stability
+    [Insert CAD pic]
+    <br><br>
+    Challenges (Tail work):
+    1. Challenge 1
+    2. Challenge 2
+    3. Challenge 3</b>
+  </p>
+
+  <p style="font-size: 24px;">FINAL SPRINT TO DEMO DAY</p>
+    <br><br>
+  </p>
+
+  <p style="font-size: 18px;">
+      This was the final stretch to achieving our stretch goal: fully integrating the helicopter.
+      <br><br>
+      After all of this work on the individual components, we tried putting everything on the helicopter – frame, landing struts, main motor plate, and tail mount, along with all relevant electronics. We knew we needed to do this testing to iron out any kinks we could find. 
+      
+      [pic23: picture of our try at putting electronics on the heli from the slides]
+
+      This assembly test had promising results–everything fit!  We had enough space for all our electronics, while still having solid attachments for all of our frame components, but there were a few other issues that had to be dealt with.
+      <br><br>
+      Testing revealed a problem with our side plate design: we had no way to plug into and update our flight controller, which was mounted on our motor/electronics mount directly below the motor. It was blocked by the side plate. 
+
+      [pic24: pic of drilled out side frame and redesigned frame side by side.]
+
+      Our initial fix for this was quick and dirty–we drilled out some holes in the side frame to allow access to the flight controller, but we designed an actual access hole when we ultimately replaced the aluminum side plates with carbon fiber to lightweight the helicopter by ~20grams.
+      <br><br>
+      We finalized the mount design for the electronics and fabricated them using PLA and heat set inserts. We originally wanted to CNC the mount and the struts out of aluminum, but due to time constraints, we settled on sticking with easily manufacturable PLA in order to spend more time testing and tuning the helicopter.
+      <br><br>
+      We started having an issue where the rotorhead hinge began seizing up as a result of the PLA deforming when the motor was run at high speeds for too long, so we began experimenting with resin prints for theoretical higher precision, less friction, and durability. 
+
+      [pic25: pic of resin printed 
+
+      However, we ultimately concluded that resin was too brittle for our uses after the rotorhead essentially exploded due to shear force twice. Furthermore, the resin prints required much more sanding down and fitting than PLA to make sure the tolerances were correct and as frictionless as possible. The benefits of moving from PLA to resin were simply insufficient to warrant longer print times. To fix the issue of the PLA seizing, we added washers inside the hinge to minimize friction between the parts that made up the hinge which worked.
+
+  </p>
+
+  <p style="font-size: 24px;">Testing the Helicopter</p>
+    <br><br>
+  </p>
+
+  <p style="font-size: 18px;">
+    We had reached the final stretch! Our helicopter was assembled and mechanically sound. In the days leading up, we had achieved flight with a semblance of control, but had a lot of trouble controlling drift – our control loop. 
+
+    [INSERT VIDEO OF HELICOPTER DRIFTING]
+
+    The helicopter was consistently drifting to the right. We tried both mechanical and software fixes to this challenge–adding more mass to the left side, bumping up our PID values, etc.
+    <br><br>
+    Over the course of the night, we did some extensive control tuning–bumping up our proportional and integral constants and doubling the amplitude of the sine wave we used to control the motor. We also tuned our center of gravity, adding an extra aluminum bar in the front of our helicopter. This tuning worked – we were able to obtain controlled, stable flight.
+  </p>
+
+
+
+
 
   <!-- **** pic1 go here ****-->
   <img
