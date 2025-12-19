@@ -66,10 +66,8 @@
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10 text-center">
 
-            <!-- Biggest + bold -->
             <h1 class="text-center fw-bold mb-3" data-aos="fade">Phase 1</h1>
 
-            <!-- Smaller but still prominent + bold -->
             <h3 class="text-center fw-bold mb-3" data-aos="fade"> <br> Introduction</h3>
 
             <p class="lead fs-5 lh-lg" data-aos="fade">
@@ -122,11 +120,9 @@
                 <br><br>
               </p>
 
-              <!-- pic6 -->
-              <img
-                src="img/pic6%20(1).jpeg"
-                style="width: 600px; height: auto; display: block; margin: 1rem auto;"
-                alt="pic6">
+              <div class="my-4 text-center">
+                <img src="img/pic6%20(1).jpeg" class="img-fluid rounded shadow" alt="pic6">
+              </div>
 
               <p class="fs-5 lh-lg">
                 Once we had done some initial ideation, we went on to do press fit testing for the 8020.
@@ -148,11 +144,9 @@
                 <br><br>
               </p>
 
-              <!-- pic7 -->
-              <img
-                src="img/pic7%20(1).jpeg"
-                style="width: 600px; height: auto; display: block; margin: 1rem auto;"
-                alt="Pic7 - final testing rig">
+              <div class="my-4 text-center">
+                <img src="img/pic7%20(1).jpeg" class="img-fluid rounded shadow" alt="Pic7 - final testing rig">
+              </div>
 
               <p class="fs-5 lh-lg">
                 We ended up using wood screws to attach the base to a 2x4,
@@ -175,66 +169,59 @@
 
                 Based on these requirements, we created an initial prototype. 
                 This prototype consisted of a 3D printed hinge in single shear
-                 held together by an underconstrained dowel. 
-                 This was just a proof of concept that this design was 
-                 sufficient for blade actuation and was not yet integrated with the motor.
-                 <br><br> Here's a picture of our initial CAD prototype for the Pivot System
+                held together by an underconstrained dowel. 
+                This was just a proof of concept that this design was 
+                sufficient for blade actuation and was not yet integrated with the motor.
+                <br><br> Here's a picture of our initial CAD prototype for the Pivot System
               </p>
 
-              <!-- improvedhub -->
-              <img
-                src="img/improvedhub.png"
-                style="width: 600px; height: auto; display: block; margin: 1rem auto;"
-                alt="improvedhub">
+              <div class="my-4 text-center">
+                <img src="img/improvedhub.png" class="img-fluid rounded shadow" alt="improvedhub">
+              </div>
             </div>
 
-            <!--ELECTRONICS, FIRMWARE, CONTROLS, MOTORS -->
+            <!-- ELECTRONICS -->
             <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="mb-3">Electronics, Firmware, Controls, and Motors</h3>
               <p class="fs-5 lh-lg">
                 We first drew out an initial draft of our overall system diagram to determine a basic, 
-                birds-eye view of electronics and firmware so we could start ordering parts. After understanding what components were necessary, we established a very rough weight and update rate estimate in order for the helicopter to respond to commands and change its thrust vector within a motor rotation.<br> 
+                birds-eye view of electronics and firmware so we could start ordering parts. The main component decisions we had to make were for the main motor, flight controller, and microcontroller running DSHOT
+                because they needed to have a sufficient update rate in order for the helicopter to respond to commands and change its thrust vector within a motor rotation.<br><br>
 
-                              <!-- birdseyeview -->
-              <img
-                src="img/birdseyeview.png"
-                style="width: 800px; height: auto; display: block; margin: 1rem auto;"
-                alt="birdseyeview">
-            </div>
-            
-                <br>  <br> <br>
-                The motor, flight controller, and microcontroller had specific requirements they needed to meet in order for the swashplateless helicopter to have a chance at 2-axis control.
-                We decided to go with SunnySky's V4006 high efficiency 380KV motor because it was a relatively inexpensive motor which had a sufficient update rate required to change rotor acceleartion throughout rotation and had enough torque/thrust to give us a 2:1 thrust to weight ratio. <br>
-                Optimally, we would've used a Teensy to run DSHOT commands due to faster update rates, higher performance, and it was what was used in the video we referenced our design off of. However, we did not have one at hand at the time, were also running out of budget, and our members had more experience with configuring ESP32s, 
-                so we decided to go with an ESP32 we had on hand in order to immediately start testing. This decision did not appear to affect our performance as ESP32 is able to send DSHOT600 at ~1k Hz which is sufficent enough to control the helicopter for much less of a cost. We also did end up burning 
+                We decided to go with SunnySky's V4006 high efficiency 380KV motor because it was a relatively inexpensive motor which had a sufficient update rate required to change rotor acceleration throughout rotation. <br>
+                Optimally, we would've used a Teensy to run DSHOT commands due to faster update rates, higher performance, and it was what was used in the video we referenced our design off of. However, we did not have one at hand at the time, and we were also running out of budget,
+                so we decided to go with an ESP32 we had on hand in order to immediately start testing. This decision did not appear to affect our performance as ESP32 is able to send DSHOT600 at ~1k Hz which is sufficient enough to control the helicopter for much less of a cost. We also did end up burning 
                 through a few ESP32s... so maybe it's a good thing we went with the cheaper microcontroller.
-                We also purchased a Flywoo GOKU F722 PRO V2 Flight Controller with good IMUs, kalman filters for data synthesis, and interfacing with iNav which is essential for making a flyable aircraft. <br>
+                Decided to go with Flywoo GOKU F722 PRO V2 Flight Controller flight controller for interfacing with iNav. <br><br>
 
-                Then we ordered all relevant electronics and motorsin including the ESC and encoder except for the tail motor because we plan on borrowing that from a project team. <br>
+                Ordered all relevant electronics and motors. We’re planning to wait on the tail motor
+                – we have motors accessible through aero which we can use.
               </p>
 
+              <div class="my-4 text-center">
+                <img src="img/birdseyeview.png" class="img-fluid rounded shadow" alt="birdseyeview">
+              </div>
+            </div>
 
-            <!--Tail Rotor Calculations -->
+            <!-- TAIL ROTOR -->
             <div class="border-top py-vh-4" data-aos="fade-up">
               <h3 class="mb-3">Tail Rotor Calculations</h3>
               <p class="fs-5 lh-lg">
+                Tail rotor systems are essential for helicopters, they provide a counteracting force
+                to the aircraft's main propeller torque. Which prevents
+                the helicopter from turning uncontrollably in the opposite direction of the main motor's rotation. 
 
-                  Tail rotor systems are essential for helicopters, they provide a counteracting force
-                  to the aircraft's main propeller torque. Which prevents
-                  the helicopter from turning uncontrollably in the opposite direction of the main motor's rotation. 
+                <br><br> In order to counteract the force generated by the main propeller,
+                the tail propeller must be able to provide enough thrust. So we needed to know how powerful our tail motor needed to be.
+                After building a physics model of the helicopter and analyzing the forces generated by the main rotor, 
+                we reached the following tail motor requirements:<br><br>
+                1. Our minimum target KV was at least 1300 RPM/V <br>
+                2. The motor must be able to sustain 30V of continuous power and 5A of continuous current<br>
+                3. The thrust force generated by the motor must be of at least 2 Newtons <br>
 
-                  <br><br> In order to counteract the force generated by the main propeller,
-                   the tail propeller must be able to provide enough thrust. So we needed to know how powerful our tail motor needed to be.
-                   After building a physics model of the helicopter and analyzing the forces generated by the main rotor, 
-                   we reached the following tail motor requirements:<br><br>
-                   1. Our minimum target KV was at least 1300 RPM/V <br>
-                   2. The motor must be able to sustain 30V of continuos power and 5A of continuos current<br>
-                   3. The thrust force generated by the motor must be of at least 2 Newtons <br>
-
-                   <br>Here's our derivation for the tail motor requirements:
+                <br>Here's our derivation for the tail motor requirements:
               </p>
 
-              <!-- PDF embed -->
               <div class="my-4">
                 <iframe src="img/Tail%20rotor%20calculations.pdf" width="100%" height="700" style="border:0;"
                   title="Tail rotor calculations"></iframe>
@@ -248,7 +235,6 @@
 
   </main>
 
-  <!-- SCRIPTS -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
