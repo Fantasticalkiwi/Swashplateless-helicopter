@@ -1,224 +1,180 @@
 <!doctype html>
 <html class="h-100" lang="en">
 
-  <head>
-      <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A growing collection of ready to use components for the CSS framework Bootstrap 5">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href=".t/img/favicon.png">
-  <meta name="author" content="Holger Koenemann">
-  <meta name="generator" content="Eleventy v2.0.0">
-  <meta name="HandheldFriendly" content="true">
+
   <title>Phase One</title>
+
   <link rel="stylesheet" href="css/theme.min.css">
 
-   <style>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      src: url('./fonts/inter-v12-latin-300.woff2') format('woff2');
+    }
 
-/* inter-300 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('./fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      src: url('./fonts/inter-v12-latin-500.woff2') format('woff2');
+    }
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local(''),
-       url('./fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local(''),
-       url('./fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      src: url('./fonts/inter-v12-latin-700.woff2') format('woff2');
+    }
+  </style>
+</head>
 
-</style>
+<body data-bs-spy="scroll" data-bs-target="#navScroll">
 
-  </head>
+  <!-- NAVBAR -->
+  <nav id="navScroll" class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand pe-4 fs-4" href="index.html">
+        <span class="fw-bolder">Less Blades, More Fun!</span>
+      </a>
 
-  <body data-bs-spy="scroll" data-bs-target="#navScroll">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <nav id="navScroll" class="navbar navbar-expand-lg navbar-light" tabindex="0">
-  <div class="container">
-    <a class="navbar-brand pe-4 fs-4" href="index.html">
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half" viewbox="0 0 16 16">
-    <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z"/>
-  </svg>
-  <span class="ms-1 fw-bolder">Less Blades, More Fun!</span>
-</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-      <a class="nav-link" href="index.html">
-      Overview
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="phase1.html">
-      Phase 1
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="phase2.html">
-      Phase 2
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="phase3.html">
-      Phase 3
-    </a>
-  </li>
-
-
-</div>
-</nav>
-
-    <main>
-      
-<div class="py-vh-4 d-flex align-items-center">
-      <div class="container">
-<div class="row d-flex justify-content-center">
-  <div class="col-10 text-center py-vh-3">
-<p class="lead" data-aos="fade">
-  <b>  Phase 1</b><br>
-  <br> <b> Introduction </b><br>
-  
-  Sprint 1 was our initial ideation and testing portion. 
-  We had come into the project knowing that we wanted to build a helicopter with a swashplateless rotor system,
-  so we started by gaining a basic understanding of this system and then went on to set goals. We primarily worked on initial prototyping, 
-  requirements definition, and test rig setup in this phase.
-  <br> <br> <b> Goals for Sprint 1 </b> </b><br>
-       1. Order the swashplateless system’s motors and electronics <br>
-       2. Make a two axis testing rig capable of pivoting in all of our relevant directions <br>
-       3. Make an initial prototype for our swashplateless mechanical system <br>
-</p>
-
-<div class="bg-white py-vh-3">
-  <div class="container">
-      
-  <div class="row d-flex d-flex align-items-stretch justify-content-center">
-    <div class="col-12 text-center">
-      <h3>Initial Design and Integration</h3>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link active" href="phase1.html">Phase 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="phase2.html">Phase 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="phase3.html">Phase 3</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="col-12 col-lg-11 col-xl-10">
-      <div class="row d-flex justify-content-between">
-        <div class="col-12 border-top py-vh-4" data-aos="fade-right" data-aos-duration="500">
-          <h5> Mechanical - Testing Rig </h5>
-          <p  class="fs-5 lh-lg">
-             Our idea was to have a rig with 2 pivots.
-            One would allow us to see how our rotor system responded to roll inputs by the controller, 
-            and the second pivot would allow us to see how it responded to pitch inputs. 
-            Our goal was to have two-axis thrust vector control before mounting all of the components on the helicopter. 
-            We started by designing and fabricating the single-axis testing stand. Once everything was mounted correctly, 
-            we could analyze the net thrust vector for the roll inputs. Once we designed and implemented one-axis control,
-            we added a second pivot to our testing rig for  pitch inputs. Once everything was integrated, 
-            we could test how our rotor system responded to the pitch and roll inputs done by the controller, 
-            and could begin advancing the design of the rotor system. <br>
+  <main>
 
-            We knew we wanted to base everything around using 8020 aluminum extrusions, 
-            as they are a very common prototyping material which we had easy access to.
-            For this first iteration of the testing rig, we only tried to have a single axis of rotation. <br>
- 
-             <br>[pic6]<br>
+    <!-- INTRO -->
+    <div class="py-vh-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 text-center">
 
-            Once we had done some initial ideation, we went on to do press fit testing for the 8020. 
-            We had previously worked with the material, but wanted a better press fit so that we could minimize 
-            wiggle caused by the testing rig– the more solid the connections, the better.
-            We went through multiple iterations before landing on an effective sizing. <br>
-            
-            Once we had our pressfit sizing set,
-            we designed and printed the pivot for the top and the mount for the bottom. 
-            With both, we used our pressfit sizing.
-            We did our best to minimize filament use and printing 
-            time by using lower infill and removing extraneous material in the parts. <br>
-            
-            At this point, we had the main portion of the testing rig complete. However, we still needed to work on the upper portion, 
-            where the rotor system would be attached. We used our previous 8020 pressfit testing to create
-            a piece that would slot into one side, then serve as a pivot for the rest. <br>
+            <p class="lead fs-5 lh-lg" data-aos="fade">
+              <b>Phase Test</b><br><br>
 
-            <br>[Pic7 - final testing rig] <br>
-            
-            We ended up using wood screws to attach the base to a 2x4,
-            with the intention of clamping the 2x4 to a table or pair of chairs whenever we wanted to test. 
-            We discovered a little wiggliness in the various pieces as well, 
-            and decided to hold them in with wood screws through the 3D prints–it held securely, 
-            didn’t destroy the 80/20, and was quick and easy to mount. <br>
-</p>
-        </div>
+              <b>Introduction</b><br>
+              Sprint 1 was our initial ideation and testing portion.
+              We had come into the project knowing that we wanted to build a helicopter with a swashplateless rotor system,
+              so we started by gaining a basic understanding of this system and then went on to set goals. We primarily worked on initial prototyping,
+              requirements definition, and test rig setup in this phase.
+              <br><br>
 
-        <div class="col-md-5 border-top py-vh-3" data-aos="fade-left" data-aos-duration="700">
-          <h5>Mechanical - Swashplateless Pivot System</h5>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
+              <b>Goals for Sprint 1</b><br>
+              1. Order the swashplateless system’s motors and electronics <br>
+              2. Make a two axis testing rig capable of pivoting in all of our relevant directions <br>
+              3. Make an initial prototype for our swashplateless mechanical system
+            </p>
 
-        <div class="col-md-5 border-top py-vh-3" data-aos="fade-right" data-aos-duration="900">
-          <h5>Where I find my invoice?</h5>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-        </div>
-
-        <div class="col-md-5 border-top py-vh-3" data-aos="fade-left" data-aos-duration="1100">
-          <h5>I can´t login. What now?</h5>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
-        <div class="col-md-5 border-top py-vh-3" data-aos="fade-right" data-aos-duration="1300">
-          <h5>Can I get a refund?</h5>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  </div>
-</div>
+    <!-- MAIN CONTENT -->
+    <div class="bg-white py-vh-4">
+      <div class="container">
+        <div class="row justify-content-center">
 
-</footer>
+          <div class="col-12 col-lg-11 col-xl-10">
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/aos.js"></script>
- <script>
- AOS.init({
-   duration: 800, // values from 0 to 3000, with step 50ms
- });
- </script>
+            <h2 class="text-center mb-5">Initial Design and Integration</h2>
 
- <script>
-  let scrollpos = window.scrollY
-  const header = document.querySelector(".navbar")
-  const header_height = header.offsetHeight
+            <!-- TESTING RIG -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">Mechanical - Testing Rig</h3>
+              <p class="fs-5 lh-lg">
+                Our idea was to have a rig with 2 pivots.
+                One would allow us to see how our rotor system responded to roll inputs by the controller,
+                and the second pivot would allow us to see how it responded to pitch inputs.
+                Our goal was to have two-axis thrust vector control before mounting all of the components on the helicopter.
+                We started by designing and fabricating the single-axis testing stand. Once everything was mounted correctly,
+                we could analyze the net thrust vector for the roll inputs. Once we designed and implemented one-axis control,
+                we added a second pivot to our testing rig for pitch inputs. Once everything was integrated,
+                we could test how our rotor system responded to the pitch and roll inputs done by the controller,
+                and could begin advancing the design of the rotor system.
+                <br><br>
 
-  const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
-  const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+                We knew we wanted to base everything around using 8020 aluminum extrusions,
+                as they are a very common prototyping material which we had easy access to.
+                For this first iteration of the testing rig, we only tried to have a single axis of rotation.
+                <br><br>
 
-  window.addEventListener('scroll', function() {
-    scrollpos = window.scrollY;
+                [pic6]
+                <br><br>
 
-    if (scrollpos >= header_height) { add_class_on_scroll() }
-    else { remove_class_on_scroll() }
+                Once we had done some initial ideation, we went on to do press fit testing for the 8020.
+                We had previously worked with the material, but wanted a better press fit so that we could minimize
+                wiggle caused by the testing rig– the more solid the connections, the better.
+                We went through multiple iterations before landing on an effective sizing.
+                <br><br>
 
-    console.log(scrollpos)
-  })
-</script>
+                Once we had our pressfit sizing set,
+                we designed and printed the pivot for the top and the mount for the bottom.
+                With both, we used our pressfit sizing.
+                We did our best to minimize filament use and printing
+                time by using lower infill and removing extraneous material in the parts.
+                <br><br>
 
-  </body>
+                At this point, we had the main portion of the testing rig complete. However, we still needed to work on the upper portion,
+                where the rotor system would be attached. We used our previous 8020 pressfit testing to create
+                a piece that would slot into one side, then serve as a pivot for the rest.
+                <br><br>
+
+                [Pic7 - final testing rig]
+                <br><br>
+
+                We ended up using wood screws to attach the base to a 2x4,
+                with the intention of clamping the 2x4 to a table or pair of chairs whenever we wanted to test.
+                We discovered a little wiggliness in the various pieces as well,
+                and decided to hold them in with wood screws through the 3D prints–it held securely,
+                didn’t destroy the 80/20, and was quick and easy to mount.
+              </p>
+            </div>
+
+            <!-- SWASHPLATELESS SYSTEM -->
+            <div class="border-top py-vh-4" data-aos="fade-up">
+              <h3 class="mb-3">Mechanical - Swashplateless Pivot System</h3>
+              <p class="fs-5 lh-lg">
+                While designing our first version of our rotor system, we knew a few considerations we needed to keep in mind <br>
+                We needed a pivot which would allow the pitch angle to change with rapid changes in speed <br>
+                Needed to be able to be mounted on a motor <br>
+                Needed to be low-friction. <br>
+                Rotors need to be same radius from center <br><br>
+
+                Based on these requirements, we created an initial prototype. This prototype consisted of a 3D printed hinge in single shear held together by an underconstrained dowel. This was just a proof of concept that this design was sufficient for blade actuation and was not yet integrated with the motor.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+  </script>
+
+</body>
 </html>
